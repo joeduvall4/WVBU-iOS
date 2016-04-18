@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EFF4A7FE9698124646CA06F /* Pods_WVBUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A7E329BD2F28FD7F0B04B4 /* Pods_WVBUUITests.framework */; };
+		4F3223DC55E691ED41979515 /* Pods_WVBU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7B579AF54EEDD426EF4AEC /* Pods_WVBU.framework */; };
+		9626A1C006F79FB5046FF287 /* Pods_WVBUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC83CF49A7CD2959AAEB9F5 /* Pods_WVBUTests.framework */; };
+		D8479DB51CC28C5F00D9C32F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */; };
+		D8479DB71CC28C5F00D9C32F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DB61CC28C5F00D9C32F /* ViewController.swift */; };
+		D8479DBA1CC28C5F00D9C32F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8479DB81CC28C5F00D9C32F /* Main.storyboard */; };
+		D8479DBC1CC28C5F00D9C32F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8479DBB1CC28C5F00D9C32F /* Assets.xcassets */; };
+		D8479DBF1CC28C5F00D9C32F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8479DBD1CC28C5F00D9C32F /* LaunchScreen.storyboard */; };
+		D8479DCA1CC28C5F00D9C32F /* WVBUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DC91CC28C5F00D9C32F /* WVBUTests.swift */; };
+		D8479DD51CC28C5F00D9C32F /* WVBUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DD41CC28C5F00D9C32F /* WVBUUITests.swift */; };
+		D8479DE31CC28CC400D9C32F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8479DE21CC28CC400D9C32F /* AVFoundation.framework */; };
+		D8479DE61CC28D3D00D9C32F /* JDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */; };
+		D8479DE81CC2975100D9C32F /* WVBUAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */; };
+		D8479DEA1CC2976200D9C32F /* WVBUMetadataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE91CC2976200D9C32F /* WVBUMetadataManager.swift */; };
+		D8479DEC1CC2977700D9C32F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8479DEB1CC2977700D9C32F /* AVKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8479DC61CC28C5F00D9C32F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8479DA91CC28C5F00D9C32F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8479DB01CC28C5F00D9C32F;
+			remoteInfo = WVBU;
+		};
+		D8479DD11CC28C5F00D9C32F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8479DA91CC28C5F00D9C32F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8479DB01CC28C5F00D9C32F;
+			remoteInfo = WVBU;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12A7E329BD2F28FD7F0B04B4 /* Pods_WVBUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVBUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1654AF4C0E7BF82452737B40 /* Pods-WVBU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVBU/Pods-WVBU.debug.xcconfig"; sourceTree = "<group>"; };
+		166E2FC11CFEA225030A8E48 /* Pods-WVBUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests.release.xcconfig"; sourceTree = "<group>"; };
+		2871BDFD59F4D79A2097ECD2 /* Pods-WVBUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUUITests/Pods-WVBUUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68A82009E5691FBB64D7601B /* Pods-WVBUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUUITests/Pods-WVBUUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6EF4D9A8639F9FC2D66DD431 /* Pods-WVBU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBU.release.xcconfig"; path = "Pods/Target Support Files/Pods-WVBU/Pods-WVBU.release.xcconfig"; sourceTree = "<group>"; };
+		73D0928E54E37C24F9ED0794 /* Pods-WVBUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8CC83CF49A7CD2959AAEB9F5 /* Pods_WVBUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVBUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8479DB11CC28C5F00D9C32F /* WVBU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WVBU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8479DB61CC28C5F00D9C32F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8479DB91CC28C5F00D9C32F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8479DBB1CC28C5F00D9C32F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8479DBE1CC28C5F00D9C32F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8479DC01CC28C5F00D9C32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8479DC51CC28C5F00D9C32F /* WVBUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WVBUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8479DC91CC28C5F00D9C32F /* WVBUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVBUTests.swift; sourceTree = "<group>"; };
+		D8479DCB1CC28C5F00D9C32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8479DD01CC28C5F00D9C32F /* WVBUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WVBUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8479DD41CC28C5F00D9C32F /* WVBUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVBUUITests.swift; sourceTree = "<group>"; };
+		D8479DD61CC28C5F00D9C32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8479DE21CC28CC400D9C32F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDHelpers.swift; sourceTree = "<group>"; };
+		D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WVBUAudioManager.swift; sourceTree = "<group>"; };
+		D8479DE91CC2976200D9C32F /* WVBUMetadataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WVBUMetadataManager.swift; sourceTree = "<group>"; };
+		D8479DEB1CC2977700D9C32F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		EB7B579AF54EEDD426EF4AEC /* Pods_WVBU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVBU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8479DAE1CC28C5F00D9C32F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8479DEC1CC2977700D9C32F /* AVKit.framework in Frameworks */,
+				D8479DE31CC28CC400D9C32F /* AVFoundation.framework in Frameworks */,
+				4F3223DC55E691ED41979515 /* Pods_WVBU.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8479DC21CC28C5F00D9C32F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9626A1C006F79FB5046FF287 /* Pods_WVBUTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8479DCD1CC28C5F00D9C32F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EFF4A7FE9698124646CA06F /* Pods_WVBUUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A18F4C8B8B548E0625803A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1654AF4C0E7BF82452737B40 /* Pods-WVBU.debug.xcconfig */,
+				6EF4D9A8639F9FC2D66DD431 /* Pods-WVBU.release.xcconfig */,
+				73D0928E54E37C24F9ED0794 /* Pods-WVBUTests.debug.xcconfig */,
+				166E2FC11CFEA225030A8E48 /* Pods-WVBUTests.release.xcconfig */,
+				68A82009E5691FBB64D7601B /* Pods-WVBUUITests.debug.xcconfig */,
+				2871BDFD59F4D79A2097ECD2 /* Pods-WVBUUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8479DA81CC28C5F00D9C32F = {
+			isa = PBXGroup;
+			children = (
+				D8479DB31CC28C5F00D9C32F /* WVBU */,
+				D8479DE41CC28CCC00D9C32F /* Frameworks */,
+				D8479DC81CC28C5F00D9C32F /* WVBUTests */,
+				D8479DD31CC28C5F00D9C32F /* WVBUUITests */,
+				D8479DB21CC28C5F00D9C32F /* Products */,
+				8A18F4C8B8B548E0625803A0 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		D8479DB21CC28C5F00D9C32F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8479DB11CC28C5F00D9C32F /* WVBU.app */,
+				D8479DC51CC28C5F00D9C32F /* WVBUTests.xctest */,
+				D8479DD01CC28C5F00D9C32F /* WVBUUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8479DB31CC28C5F00D9C32F /* WVBU */ = {
+			isa = PBXGroup;
+			children = (
+				D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */,
+				D8479DB61CC28C5F00D9C32F /* ViewController.swift */,
+				D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */,
+				D8479DE91CC2976200D9C32F /* WVBUMetadataManager.swift */,
+				D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */,
+				D8479DB81CC28C5F00D9C32F /* Main.storyboard */,
+				D8479DBB1CC28C5F00D9C32F /* Assets.xcassets */,
+				D8479DBD1CC28C5F00D9C32F /* LaunchScreen.storyboard */,
+				D8479DC01CC28C5F00D9C32F /* Info.plist */,
+			);
+			path = WVBU;
+			sourceTree = "<group>";
+		};
+		D8479DC81CC28C5F00D9C32F /* WVBUTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8479DC91CC28C5F00D9C32F /* WVBUTests.swift */,
+				D8479DCB1CC28C5F00D9C32F /* Info.plist */,
+			);
+			path = WVBUTests;
+			sourceTree = "<group>";
+		};
+		D8479DD31CC28C5F00D9C32F /* WVBUUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8479DD41CC28C5F00D9C32F /* WVBUUITests.swift */,
+				D8479DD61CC28C5F00D9C32F /* Info.plist */,
+			);
+			path = WVBUUITests;
+			sourceTree = "<group>";
+		};
+		D8479DE41CC28CCC00D9C32F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8479DEB1CC2977700D9C32F /* AVKit.framework */,
+				D8479DE21CC28CC400D9C32F /* AVFoundation.framework */,
+				EB7B579AF54EEDD426EF4AEC /* Pods_WVBU.framework */,
+				8CC83CF49A7CD2959AAEB9F5 /* Pods_WVBUTests.framework */,
+				12A7E329BD2F28FD7F0B04B4 /* Pods_WVBUUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8479DB01CC28C5F00D9C32F /* WVBU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8479DD91CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBU" */;
+			buildPhases = (
+				FBB1DB44CA27BE1345718FB5 /* Check Pods Manifest.lock */,
+				D8479DAD1CC28C5F00D9C32F /* Sources */,
+				D8479DAE1CC28C5F00D9C32F /* Frameworks */,
+				D8479DAF1CC28C5F00D9C32F /* Resources */,
+				DB9AF7CE54157A180C4DE964 /* Embed Pods Frameworks */,
+				E8F8A4791E8C4333C20FD16F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WVBU;
+			productName = WVBU;
+			productReference = D8479DB11CC28C5F00D9C32F /* WVBU.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8479DC41CC28C5F00D9C32F /* WVBUTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8479DDC1CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBUTests" */;
+			buildPhases = (
+				6979BC967DEAFE56DFD508E2 /* Check Pods Manifest.lock */,
+				D8479DC11CC28C5F00D9C32F /* Sources */,
+				D8479DC21CC28C5F00D9C32F /* Frameworks */,
+				D8479DC31CC28C5F00D9C32F /* Resources */,
+				D6CBB01EDB33CB6F1ABFE62F /* Embed Pods Frameworks */,
+				1026499C7CE52523CC38F77D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8479DC71CC28C5F00D9C32F /* PBXTargetDependency */,
+			);
+			name = WVBUTests;
+			productName = WVBUTests;
+			productReference = D8479DC51CC28C5F00D9C32F /* WVBUTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8479DCF1CC28C5F00D9C32F /* WVBUUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8479DDF1CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBUUITests" */;
+			buildPhases = (
+				9A1AA34E85CFFEAB40A1DFD3 /* Check Pods Manifest.lock */,
+				D8479DCC1CC28C5F00D9C32F /* Sources */,
+				D8479DCD1CC28C5F00D9C32F /* Frameworks */,
+				D8479DCE1CC28C5F00D9C32F /* Resources */,
+				5BEF047137CC19093D024720 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8479DD21CC28C5F00D9C32F /* PBXTargetDependency */,
+			);
+			name = WVBUUITests;
+			productName = WVBUUITests;
+			productReference = D8479DD01CC28C5F00D9C32F /* WVBUUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8479DA91CC28C5F00D9C32F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Joe Duvall";
+				TargetAttributes = {
+					D8479DB01CC28C5F00D9C32F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D8479DC41CC28C5F00D9C32F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D8479DB01CC28C5F00D9C32F;
+					};
+					D8479DCF1CC28C5F00D9C32F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = D8479DB01CC28C5F00D9C32F;
+					};
+				};
+			};
+			buildConfigurationList = D8479DAC1CC28C5F00D9C32F /* Build configuration list for PBXProject "WVBU" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8479DA81CC28C5F00D9C32F;
+			productRefGroup = D8479DB21CC28C5F00D9C32F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8479DB01CC28C5F00D9C32F /* WVBU */,
+				D8479DC41CC28C5F00D9C32F /* WVBUTests */,
+				D8479DCF1CC28C5F00D9C32F /* WVBUUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8479DAF1CC28C5F00D9C32F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8479DBF1CC28C5F00D9C32F /* LaunchScreen.storyboard in Resources */,
+				D8479DBC1CC28C5F00D9C32F /* Assets.xcassets in Resources */,
+				D8479DBA1CC28C5F00D9C32F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8479DC31CC28C5F00D9C32F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8479DCE1CC28C5F00D9C32F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1026499C7CE52523CC38F77D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BEF047137CC19093D024720 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBUUITests/Pods-WVBUUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6979BC967DEAFE56DFD508E2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9A1AA34E85CFFEAB40A1DFD3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6CBB01EDB33CB6F1ABFE62F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB9AF7CE54157A180C4DE964 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBU/Pods-WVBU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8F8A4791E8C4333C20FD16F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBU/Pods-WVBU-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBB1DB44CA27BE1345718FB5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8479DAD1CC28C5F00D9C32F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8479DEA1CC2976200D9C32F /* WVBUMetadataManager.swift in Sources */,
+				D8479DB71CC28C5F00D9C32F /* ViewController.swift in Sources */,
+				D8479DB51CC28C5F00D9C32F /* AppDelegate.swift in Sources */,
+				D8479DE81CC2975100D9C32F /* WVBUAudioManager.swift in Sources */,
+				D8479DE61CC28D3D00D9C32F /* JDHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8479DC11CC28C5F00D9C32F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8479DCA1CC28C5F00D9C32F /* WVBUTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8479DCC1CC28C5F00D9C32F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8479DD51CC28C5F00D9C32F /* WVBUUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8479DC71CC28C5F00D9C32F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8479DB01CC28C5F00D9C32F /* WVBU */;
+			targetProxy = D8479DC61CC28C5F00D9C32F /* PBXContainerItemProxy */;
+		};
+		D8479DD21CC28C5F00D9C32F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8479DB01CC28C5F00D9C32F /* WVBU */;
+			targetProxy = D8479DD11CC28C5F00D9C32F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8479DB81CC28C5F00D9C32F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8479DB91CC28C5F00D9C32F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D8479DBD1CC28C5F00D9C32F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8479DBE1CC28C5F00D9C32F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8479DD71CC28C5F00D9C32F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8479DD81CC28C5F00D9C32F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8479DDA1CC28C5F00D9C32F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1654AF4C0E7BF82452737B40 /* Pods-WVBU.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WVBU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D8479DDB1CC28C5F00D9C32F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF4D9A8639F9FC2D66DD431 /* Pods-WVBU.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WVBU/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D8479DDD1CC28C5F00D9C32F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73D0928E54E37C24F9ED0794 /* Pods-WVBUTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WVBUTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WVBU.app/WVBU";
+			};
+			name = Debug;
+		};
+		D8479DDE1CC28C5F00D9C32F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 166E2FC11CFEA225030A8E48 /* Pods-WVBUTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WVBUTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WVBU.app/WVBU";
+			};
+			name = Release;
+		};
+		D8479DE01CC28C5F00D9C32F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68A82009E5691FBB64D7601B /* Pods-WVBUUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = WVBUUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WVBU;
+			};
+			name = Debug;
+		};
+		D8479DE11CC28C5F00D9C32F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2871BDFD59F4D79A2097ECD2 /* Pods-WVBUUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = WVBUUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WVBU;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8479DAC1CC28C5F00D9C32F /* Build configuration list for PBXProject "WVBU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8479DD71CC28C5F00D9C32F /* Debug */,
+				D8479DD81CC28C5F00D9C32F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8479DD91CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8479DDA1CC28C5F00D9C32F /* Debug */,
+				D8479DDB1CC28C5F00D9C32F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8479DDC1CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBUTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8479DDD1CC28C5F00D9C32F /* Debug */,
+				D8479DDE1CC28C5F00D9C32F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8479DDF1CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBUUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8479DE01CC28C5F00D9C32F /* Debug */,
+				D8479DE11CC28C5F00D9C32F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8479DA91CC28C5F00D9C32F /* Project object */;
+}
