@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AlamofireNetworkActivityIndicator
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         NetworkActivityIndicatorManager.sharedManager.isEnabled = true
         setAudioSessionActive(true, callingFunction: #function)
+        
+        MPRemoteCommandCenter.sharedCommandCenter().seekForwardCommand.enabled = false
+        MPRemoteCommandCenter.sharedCommandCenter().nextTrackCommand.enabled = false
+        MPRemoteCommandCenter.sharedCommandCenter().seekBackwardCommand.enabled = false
+        MPRemoteCommandCenter.sharedCommandCenter().previousTrackCommand.enabled = false
+        //MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.enabled = false
+        
+        MPRemoteCommandCenter.sharedCommandCenter().playCommand.enabled = true
+        MPRemoteCommandCenter.sharedCommandCenter().playCommand.addTarget(WVBUAudioManager.sharedManager, action: #selector(WVBUAudioManager.sharedManager.play))
+        MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.enabled = true
+        MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.addTarget(WVBUAudioManager.sharedManager, action: #selector(WVBUAudioManager.sharedManager.pause))
+        
+        
         return true
     }
 
@@ -44,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

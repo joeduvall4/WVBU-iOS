@@ -39,6 +39,7 @@ func printError(error: NSError, callingFunction: String?, severity: ErrorSeverit
 func setAudioSessionActive(active: Bool, callingFunction: String? = nil) {
     let audioSession = AVAudioSession.sharedInstance()
     do {
+        try audioSession.setActive(active)
         try audioSession.setCategory(AVAudioSessionCategoryPlayback)
     } catch let error as NSError {
         printError(error, callingFunction: callingFunction, severity: .Important, customString: "Error setting audio category.")

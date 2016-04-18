@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import MediaPlayer
 
 struct Song {
     var title: String
@@ -31,7 +32,14 @@ class WVBUMetadataManager {
     var currentSongTitle: String?
     var currentSongArtist: String?
     var currentSongiTunesURL: NSURL?
-    var currentSongAlbumArtwork: UIImage?
+    var currentSongAlbumArtwork: UIImage? {
+        didSet {
+            guard currentSongAlbumArtwork != nil else { return }
+            var currentInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
+            currentInfo![MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: currentSongAlbumArtwork!)
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = currentInfo
+        }
+    }
     
     func requestMetadataUpdate() {
         if let song = getNowPlaying() {
@@ -40,6 +48,8 @@ class WVBUMetadataManager {
             } else {
                 currentSongTitle = song.title
                 currentSongArtist = song.artist
+                let mediaInfo = [MPMediaItemPropertyArtist : song.artist, MPMediaItemPropertyTitle : song.title]
+                MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = mediaInfo
                 delegate?.metadataDidGetNewSongAndArtist(song.title, artist: song.artist)
                 searchForAlbumArtwork(song: song.title, artist: song.artist)
             }
@@ -73,6 +83,7 @@ class WVBUMetadataManager {
                     let albumArtworkURLStringHighRes = albumArtworkURLString.stringByReplacingOccurrencesOfString("100x100", withString: "600x600")
                     Alamofire.request(.GET, albumArtworkURLStringHighRes, parameters: nil, encoding: .URL, headers: ["User-Agent" : "WVBU Player v1.0"]).responseImage(completionHandler: { (response: Response<Image, NSError>) -> Void in
                         if let image = response.result.value {
+                            self.currentSongAlbumArtwork = image
                             self.delegate?.metadataDidGetNewAlbumArtwork(image)
                         } else {
                             self.delegate?.metadataDidFailToGetAlbumArtwork("Could not parse image response.")

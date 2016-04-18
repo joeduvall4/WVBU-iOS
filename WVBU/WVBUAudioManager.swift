@@ -9,13 +9,14 @@
 import UIKit
 import AVFoundation
 import AVKit
+import MediaPlayer
 
 protocol WVBUAudioManagerDelegate {
     func audioManagerDidStopPlaying()
     func audioManagerDidStartPlaying()
 }
 
-class WVBUAudioManager {
+class WVBUAudioManager: NSObject {
 
     /// The shared instance of `WVBUAudioManager`.
     static let sharedManager = WVBUAudioManager()
@@ -34,7 +35,8 @@ class WVBUAudioManager {
     
     /// Initializes a new instance of WVBUAudioManager. Subscribes to appropriate NSNotifications.
     /// - Note: This is a private initializer. This forces use of the `sharedManager` singleton instance.
-    private init() {
+    private override init() {
+        super.init()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.compensateForMissedAudioStateChangesInBackground), name: Notifications.applicationWillEnterForeground.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.audioSessionInterrupted(_:)), name: AVAudioSessionInterruptionNotification, object: nil)
     }
@@ -47,19 +49,23 @@ class WVBUAudioManager {
     
     /// Plays the audio. 
     /// To ensure that users are always listening to the live stream, this method reinitializes the `AVPlayer` instance.
-    func play() {
+    @objc func play() {
         player = AVPlayer(URL: NSURL(string: URLStrings.MainStream.rawValue)!) // Re-Initialize Player
         player.play()
         if player.isPlaying {
+            print("Playing")
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = player.rate
             setAudioSessionActive(true, callingFunction: #function)
             delegate?.audioManagerDidStartPlaying()
         }
     }
     
     /// Pauses the audio.
-    func pause() {
+    @objc func pause() {
         player.pause()
         if player.isPaused {
+            print("Paused")
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = player.rate
             setAudioSessionActive(false, callingFunction: #function)
             delegate?.audioManagerDidStopPlaying()
         }
