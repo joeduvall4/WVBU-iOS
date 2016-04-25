@@ -21,3 +21,10 @@ target 'WVBUUITests' do
 
 end
 
+target 'WVBU Watch App Extension' do
+	platform :watchos, '2.0'
+	pod 'Alamofire', '~> 3.3'
+	pod 'AlamofireImage', '~> 2.0'
+	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+end
+

@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4EFF4A7FE9698124646CA06F /* Pods_WVBUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A7E329BD2F28FD7F0B04B4 /* Pods_WVBUUITests.framework */; };
-		4F3223DC55E691ED41979515 /* Pods_WVBU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7B579AF54EEDD426EF4AEC /* Pods_WVBU.framework */; };
-		9626A1C006F79FB5046FF287 /* Pods_WVBUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC83CF49A7CD2959AAEB9F5 /* Pods_WVBUTests.framework */; };
 		D8479DB51CC28C5F00D9C32F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */; };
 		D8479DB71CC28C5F00D9C32F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DB61CC28C5F00D9C32F /* ViewController.swift */; };
 		D8479DBA1CC28C5F00D9C32F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8479DB81CC28C5F00D9C32F /* Main.storyboard */; };
@@ -20,8 +17,24 @@
 		D8479DE31CC28CC400D9C32F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8479DE21CC28CC400D9C32F /* AVFoundation.framework */; };
 		D8479DE61CC28D3D00D9C32F /* JDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */; };
 		D8479DE81CC2975100D9C32F /* WVBUAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */; };
-		D8479DEA1CC2976200D9C32F /* WVBUMetadataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE91CC2976200D9C32F /* WVBUMetadataManager.swift */; };
 		D8479DEC1CC2977700D9C32F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8479DEB1CC2977700D9C32F /* AVKit.framework */; };
+		D8B92D6E1CC827780033B614 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B92D6C1CC827780033B614 /* Interface.storyboard */; };
+		D8B92D701CC827780033B614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B92D6F1CC827780033B614 /* Assets.xcassets */; };
+		D8B92D771CC827780033B614 /* WVBU Watch App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D8B92D761CC827780033B614 /* WVBU Watch App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D8B92D7E1CC827780033B614 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B92D7D1CC827780033B614 /* InterfaceController.swift */; };
+		D8B92D801CC827780033B614 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B92D7F1CC827780033B614 /* ExtensionDelegate.swift */; };
+		D8B92D821CC827780033B614 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B92D811CC827780033B614 /* NotificationController.swift */; };
+		D8B92D841CC827780033B614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B92D831CC827780033B614 /* Assets.xcassets */; };
+		D8B92D881CC827780033B614 /* WVBU Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D8B92D6A1CC827780033B614 /* WVBU Watch App.app */; };
+		D8BE6FD71CCDA8F500C7686B /* WVBUAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */; };
+		D8BE6FD91CCDAA3100C7686B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8BE6FD81CCDAA3100C7686B /* Assets.xcassets */; };
+		D8BE6FDA1CCDAB5500C7686B /* JDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */; };
+		D8D238B31CC84C4B00EE7129 /* WVBUMetadataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D238B21CC84C4B00EE7129 /* WVBUMetadataManager.swift */; };
+		D8DC9B9B1CCD7CC8002B2979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC9B9A1CCD7CC8002B2979 /* AppDelegate.swift */; };
+		D8DC9B9D1CCD7CC8002B2979 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC9B9C1CCD7CC8002B2979 /* ViewController.swift */; };
+		D8DC9BA01CCD7CC8002B2979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DC9B9E1CCD7CC8002B2979 /* Main.storyboard */; };
+		D8DC9BA71CCD8D30002B2979 /* WVBUMetadataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D238B21CC84C4B00EE7129 /* WVBUMetadataManager.swift */; };
+		D8DC9BA81CCD8D33002B2979 /* WVBUMetadataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D238B21CC84C4B00EE7129 /* WVBUMetadataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,17 +52,48 @@
 			remoteGlobalIDString = D8479DB01CC28C5F00D9C32F;
 			remoteInfo = WVBU;
 		};
+		D8B92D781CC827780033B614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8479DA91CC28C5F00D9C32F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8B92D751CC827780033B614;
+			remoteInfo = "WVBU Watch App Extension";
+		};
+		D8B92D861CC827780033B614 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8479DA91CC28C5F00D9C32F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8B92D691CC827780033B614;
+			remoteInfo = "WVBU Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D8B92D8E1CC827780033B614 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D8B92D771CC827780033B614 /* WVBU Watch App Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B92D901CC827780033B614 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D8B92D881CC827780033B614 /* WVBU Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		12A7E329BD2F28FD7F0B04B4 /* Pods_WVBUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVBUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1654AF4C0E7BF82452737B40 /* Pods-WVBU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVBU/Pods-WVBU.debug.xcconfig"; sourceTree = "<group>"; };
-		166E2FC11CFEA225030A8E48 /* Pods-WVBUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests.release.xcconfig"; sourceTree = "<group>"; };
-		2871BDFD59F4D79A2097ECD2 /* Pods-WVBUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUUITests/Pods-WVBUUITests.release.xcconfig"; sourceTree = "<group>"; };
-		68A82009E5691FBB64D7601B /* Pods-WVBUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUUITests/Pods-WVBUUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6EF4D9A8639F9FC2D66DD431 /* Pods-WVBU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBU.release.xcconfig"; path = "Pods/Target Support Files/Pods-WVBU/Pods-WVBU.release.xcconfig"; sourceTree = "<group>"; };
-		73D0928E54E37C24F9ED0794 /* Pods-WVBUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVBUTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8CC83CF49A7CD2959AAEB9F5 /* Pods_WVBUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVBUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8479DB11CC28C5F00D9C32F /* WVBU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WVBU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8479DB61CC28C5F00D9C32F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,21 +108,43 @@
 		D8479DD41CC28C5F00D9C32F /* WVBUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVBUUITests.swift; sourceTree = "<group>"; };
 		D8479DD61CC28C5F00D9C32F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8479DE21CC28CC400D9C32F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDHelpers.swift; sourceTree = "<group>"; };
-		D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WVBUAudioManager.swift; sourceTree = "<group>"; };
-		D8479DE91CC2976200D9C32F /* WVBUMetadataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WVBUMetadataManager.swift; sourceTree = "<group>"; };
+		D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JDHelpers.swift; path = WVBU/JDHelpers.swift; sourceTree = "<group>"; };
+		D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WVBUAudioManager.swift; path = WVBU/WVBUAudioManager.swift; sourceTree = "<group>"; };
 		D8479DEB1CC2977700D9C32F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		EB7B579AF54EEDD426EF4AEC /* Pods_WVBU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVBU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B92D6A1CC827780033B614 /* WVBU Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVBU Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B92D6D1CC827780033B614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D8B92D6F1CC827780033B614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8B92D711CC827780033B614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8B92D761CC827780033B614 /* WVBU Watch App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WVBU Watch App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B92D7C1CC827780033B614 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D8B92D7D1CC827780033B614 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D8B92D7F1CC827780033B614 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D8B92D811CC827780033B614 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		D8B92D831CC827780033B614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8B92D851CC827780033B614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8BE6FD81CCDAA3100C7686B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8D238B21CC84C4B00EE7129 /* WVBUMetadataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WVBUMetadataManager.swift; path = "WVBU Watch App Extension/WVBUMetadataManager.swift"; sourceTree = "<group>"; };
+		D8DC9B981CCD7CC8002B2979 /* WVBU-TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVBU-TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8DC9B9A1CCD7CC8002B2979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8DC9B9C1CCD7CC8002B2979 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8DC9B9F1CCD7CC8002B2979 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8DC9BA31CCD7CC8002B2979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B686D5C4E879486ABABE00C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8479DAE1CC28C5F00D9C32F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D8479DEC1CC2977700D9C32F /* AVKit.framework in Frameworks */,
 				D8479DE31CC28CC400D9C32F /* AVFoundation.framework in Frameworks */,
-				4F3223DC55E691ED41979515 /* Pods_WVBU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +152,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9626A1C006F79FB5046FF287 /* Pods_WVBUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,35 +159,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EFF4A7FE9698124646CA06F /* Pods_WVBUUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B92D731CC827780033B614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8DC9B951CCD7CC8002B2979 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A18F4C8B8B548E0625803A0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1654AF4C0E7BF82452737B40 /* Pods-WVBU.debug.xcconfig */,
-				6EF4D9A8639F9FC2D66DD431 /* Pods-WVBU.release.xcconfig */,
-				73D0928E54E37C24F9ED0794 /* Pods-WVBUTests.debug.xcconfig */,
-				166E2FC11CFEA225030A8E48 /* Pods-WVBUTests.release.xcconfig */,
-				68A82009E5691FBB64D7601B /* Pods-WVBUUITests.debug.xcconfig */,
-				2871BDFD59F4D79A2097ECD2 /* Pods-WVBUUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		D8479DA81CC28C5F00D9C32F = {
 			isa = PBXGroup;
 			children = (
+				D8D238B21CC84C4B00EE7129 /* WVBUMetadataManager.swift */,
+				D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */,
+				D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */,
 				D8479DB31CC28C5F00D9C32F /* WVBU */,
+				D8B92D6B1CC827780033B614 /* WVBU Watch App */,
+				D8B92D7A1CC827780033B614 /* WVBU Watch App Extension */,
+				D8DC9B991CCD7CC8002B2979 /* WVBU-TV */,
 				D8479DE41CC28CCC00D9C32F /* Frameworks */,
 				D8479DC81CC28C5F00D9C32F /* WVBUTests */,
 				D8479DD31CC28C5F00D9C32F /* WVBUUITests */,
 				D8479DB21CC28C5F00D9C32F /* Products */,
-				8A18F4C8B8B548E0625803A0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +202,9 @@
 				D8479DB11CC28C5F00D9C32F /* WVBU.app */,
 				D8479DC51CC28C5F00D9C32F /* WVBUTests.xctest */,
 				D8479DD01CC28C5F00D9C32F /* WVBUUITests.xctest */,
+				D8B92D6A1CC827780033B614 /* WVBU Watch App.app */,
+				D8B92D761CC827780033B614 /* WVBU Watch App Extension.appex */,
+				D8DC9B981CCD7CC8002B2979 /* WVBU-TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,9 +214,6 @@
 			children = (
 				D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */,
 				D8479DB61CC28C5F00D9C32F /* ViewController.swift */,
-				D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */,
-				D8479DE91CC2976200D9C32F /* WVBUMetadataManager.swift */,
-				D8479DE51CC28D3D00D9C32F /* JDHelpers.swift */,
 				D8479DB81CC28C5F00D9C32F /* Main.storyboard */,
 				D8479DBB1CC28C5F00D9C32F /* Assets.xcassets */,
 				D8479DBD1CC28C5F00D9C32F /* LaunchScreen.storyboard */,
@@ -175,11 +245,51 @@
 			children = (
 				D8479DEB1CC2977700D9C32F /* AVKit.framework */,
 				D8479DE21CC28CC400D9C32F /* AVFoundation.framework */,
-				EB7B579AF54EEDD426EF4AEC /* Pods_WVBU.framework */,
-				8CC83CF49A7CD2959AAEB9F5 /* Pods_WVBUTests.framework */,
-				12A7E329BD2F28FD7F0B04B4 /* Pods_WVBUUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8B92D6B1CC827780033B614 /* WVBU Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				D8B92D6C1CC827780033B614 /* Interface.storyboard */,
+				D8B92D6F1CC827780033B614 /* Assets.xcassets */,
+				D8B92D711CC827780033B614 /* Info.plist */,
+			);
+			path = "WVBU Watch App";
+			sourceTree = "<group>";
+		};
+		D8B92D7A1CC827780033B614 /* WVBU Watch App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D8B92D7D1CC827780033B614 /* InterfaceController.swift */,
+				D8B92D7F1CC827780033B614 /* ExtensionDelegate.swift */,
+				D8B92D811CC827780033B614 /* NotificationController.swift */,
+				D8B92D831CC827780033B614 /* Assets.xcassets */,
+				D8B92D851CC827780033B614 /* Info.plist */,
+				D8B92D7B1CC827780033B614 /* Supporting Files */,
+			);
+			path = "WVBU Watch App Extension";
+			sourceTree = "<group>";
+		};
+		D8B92D7B1CC827780033B614 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8B92D7C1CC827780033B614 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8DC9B991CCD7CC8002B2979 /* WVBU-TV */ = {
+			isa = PBXGroup;
+			children = (
+				D8DC9B9A1CCD7CC8002B2979 /* AppDelegate.swift */,
+				D8DC9B9C1CCD7CC8002B2979 /* ViewController.swift */,
+				D8DC9B9E1CCD7CC8002B2979 /* Main.storyboard */,
+				D8BE6FD81CCDAA3100C7686B /* Assets.xcassets */,
+				D8DC9BA31CCD7CC8002B2979 /* Info.plist */,
+			);
+			path = "WVBU-TV";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,16 +299,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8479DD91CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBU" */;
 			buildPhases = (
-				FBB1DB44CA27BE1345718FB5 /* Check Pods Manifest.lock */,
 				D8479DAD1CC28C5F00D9C32F /* Sources */,
 				D8479DAE1CC28C5F00D9C32F /* Frameworks */,
 				D8479DAF1CC28C5F00D9C32F /* Resources */,
-				DB9AF7CE54157A180C4DE964 /* Embed Pods Frameworks */,
-				E8F8A4791E8C4333C20FD16F /* Copy Pods Resources */,
+				D8B92D901CC827780033B614 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D8B92D871CC827780033B614 /* PBXTargetDependency */,
 			);
 			name = WVBU;
 			productName = WVBU;
@@ -209,12 +318,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8479DDC1CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBUTests" */;
 			buildPhases = (
-				6979BC967DEAFE56DFD508E2 /* Check Pods Manifest.lock */,
 				D8479DC11CC28C5F00D9C32F /* Sources */,
 				D8479DC21CC28C5F00D9C32F /* Frameworks */,
 				D8479DC31CC28C5F00D9C32F /* Resources */,
-				D6CBB01EDB33CB6F1ABFE62F /* Embed Pods Frameworks */,
-				1026499C7CE52523CC38F77D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,11 +336,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8479DDF1CC28C5F00D9C32F /* Build configuration list for PBXNativeTarget "WVBUUITests" */;
 			buildPhases = (
-				9A1AA34E85CFFEAB40A1DFD3 /* Check Pods Manifest.lock */,
 				D8479DCC1CC28C5F00D9C32F /* Sources */,
 				D8479DCD1CC28C5F00D9C32F /* Frameworks */,
 				D8479DCE1CC28C5F00D9C32F /* Resources */,
-				5BEF047137CC19093D024720 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,6 +349,58 @@
 			productName = WVBUUITests;
 			productReference = D8479DD01CC28C5F00D9C32F /* WVBUUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D8B92D691CC827780033B614 /* WVBU Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8B92D8F1CC827780033B614 /* Build configuration list for PBXNativeTarget "WVBU Watch App" */;
+			buildPhases = (
+				D8B92D681CC827780033B614 /* Resources */,
+				D8B92D8E1CC827780033B614 /* Embed App Extensions */,
+				B686D5C4E879486ABABE00C3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8B92D791CC827780033B614 /* PBXTargetDependency */,
+			);
+			name = "WVBU Watch App";
+			productName = "WVBU Watch App";
+			productReference = D8B92D6A1CC827780033B614 /* WVBU Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D8B92D751CC827780033B614 /* WVBU Watch App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8B92D8D1CC827780033B614 /* Build configuration list for PBXNativeTarget "WVBU Watch App Extension" */;
+			buildPhases = (
+				D8B92D721CC827780033B614 /* Sources */,
+				D8B92D731CC827780033B614 /* Frameworks */,
+				D8B92D741CC827780033B614 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WVBU Watch App Extension";
+			productName = "WVBU Watch App Extension";
+			productReference = D8B92D761CC827780033B614 /* WVBU Watch App Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		D8DC9B971CCD7CC8002B2979 /* WVBU-TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8DC9BA61CCD7CC8002B2979 /* Build configuration list for PBXNativeTarget "WVBU-TV" */;
+			buildPhases = (
+				D8DC9B941CCD7CC8002B2979 /* Sources */,
+				D8DC9B951CCD7CC8002B2979 /* Frameworks */,
+				D8DC9B961CCD7CC8002B2979 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WVBU-TV";
+			productName = "WVBU-TV";
+			productReference = D8DC9B981CCD7CC8002B2979 /* WVBU-TV.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -267,6 +423,15 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = D8479DB01CC28C5F00D9C32F;
 					};
+					D8B92D691CC827780033B614 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D8B92D751CC827780033B614 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D8DC9B971CCD7CC8002B2979 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = D8479DAC1CC28C5F00D9C32F /* Build configuration list for PBXProject "WVBU" */;
@@ -285,6 +450,9 @@
 				D8479DB01CC28C5F00D9C32F /* WVBU */,
 				D8479DC41CC28C5F00D9C32F /* WVBUTests */,
 				D8479DCF1CC28C5F00D9C32F /* WVBUUITests */,
+				D8B92D691CC827780033B614 /* WVBU Watch App */,
+				D8B92D751CC827780033B614 /* WVBU Watch App Extension */,
+				D8DC9B971CCD7CC8002B2979 /* WVBU-TV */,
 			);
 		};
 /* End PBXProject section */
@@ -314,137 +482,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8B92D681CC827780033B614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B92D701CC827780033B614 /* Assets.xcassets in Resources */,
+				D8B92D6E1CC827780033B614 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8B92D741CC827780033B614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B92D841CC827780033B614 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8DC9B961CCD7CC8002B2979 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8DC9BA01CCD7CC8002B2979 /* Main.storyboard in Resources */,
+				D8BE6FD91CCDAA3100C7686B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1026499C7CE52523CC38F77D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5BEF047137CC19093D024720 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBUUITests/Pods-WVBUUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6979BC967DEAFE56DFD508E2 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9A1AA34E85CFFEAB40A1DFD3 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D6CBB01EDB33CB6F1ABFE62F /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBUTests/Pods-WVBUTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB9AF7CE54157A180C4DE964 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBU/Pods-WVBU-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E8F8A4791E8C4333C20FD16F /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVBU/Pods-WVBU-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FBB1DB44CA27BE1345718FB5 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8479DAD1CC28C5F00D9C32F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8479DEA1CC2976200D9C32F /* WVBUMetadataManager.swift in Sources */,
+				D8DC9BA71CCD8D30002B2979 /* WVBUMetadataManager.swift in Sources */,
 				D8479DB71CC28C5F00D9C32F /* ViewController.swift in Sources */,
 				D8479DB51CC28C5F00D9C32F /* AppDelegate.swift in Sources */,
 				D8479DE81CC2975100D9C32F /* WVBUAudioManager.swift in Sources */,
@@ -468,6 +539,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8B92D721CC827780033B614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D238B31CC84C4B00EE7129 /* WVBUMetadataManager.swift in Sources */,
+				D8B92D821CC827780033B614 /* NotificationController.swift in Sources */,
+				D8B92D801CC827780033B614 /* ExtensionDelegate.swift in Sources */,
+				D8B92D7E1CC827780033B614 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8DC9B941CCD7CC8002B2979 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8DC9B9D1CCD7CC8002B2979 /* ViewController.swift in Sources */,
+				D8DC9B9B1CCD7CC8002B2979 /* AppDelegate.swift in Sources */,
+				D8BE6FDA1CCDAB5500C7686B /* JDHelpers.swift in Sources */,
+				D8BE6FD71CCDA8F500C7686B /* WVBUAudioManager.swift in Sources */,
+				D8DC9BA81CCD8D33002B2979 /* WVBUMetadataManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -480,6 +574,16 @@
 			isa = PBXTargetDependency;
 			target = D8479DB01CC28C5F00D9C32F /* WVBU */;
 			targetProxy = D8479DD11CC28C5F00D9C32F /* PBXContainerItemProxy */;
+		};
+		D8B92D791CC827780033B614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8B92D751CC827780033B614 /* WVBU Watch App Extension */;
+			targetProxy = D8B92D781CC827780033B614 /* PBXContainerItemProxy */;
+		};
+		D8B92D871CC827780033B614 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8B92D691CC827780033B614 /* WVBU Watch App */;
+			targetProxy = D8B92D861CC827780033B614 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -498,6 +602,22 @@
 				D8479DBE1CC28C5F00D9C32F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D8B92D6C1CC827780033B614 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8B92D6D1CC827780033B614 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		D8DC9B9E1CCD7CC8002B2979 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8DC9B9F1CCD7CC8002B2979 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -590,7 +710,6 @@
 		};
 		D8479DDA1CC28C5F00D9C32F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1654AF4C0E7BF82452737B40 /* Pods-WVBU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WVBU/Info.plist;
@@ -602,7 +721,6 @@
 		};
 		D8479DDB1CC28C5F00D9C32F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EF4D9A8639F9FC2D66DD431 /* Pods-WVBU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WVBU/Info.plist;
@@ -614,7 +732,6 @@
 		};
 		D8479DDD1CC28C5F00D9C32F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73D0928E54E37C24F9ED0794 /* Pods-WVBUTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WVBUTests/Info.plist;
@@ -627,7 +744,6 @@
 		};
 		D8479DDE1CC28C5F00D9C32F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 166E2FC11CFEA225030A8E48 /* Pods-WVBUTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WVBUTests/Info.plist;
@@ -640,7 +756,6 @@
 		};
 		D8479DE01CC28C5F00D9C32F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68A82009E5691FBB64D7601B /* Pods-WVBUUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WVBUUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -652,13 +767,102 @@
 		};
 		D8479DE11CC28C5F00D9C32F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2871BDFD59F4D79A2097ECD2 /* Pods-WVBUUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WVBUUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = WVBU;
+			};
+			name = Release;
+		};
+		D8B92D891CC827780033B614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WVBU_Watch_App_Extension;
+				INFOPLIST_FILE = "WVBU Watch App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		D8B92D8A1CC827780033B614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WVBU_Watch_App_Extension;
+				INFOPLIST_FILE = "WVBU Watch App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		D8B92D8B1CC827780033B614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WVBU Watch App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		D8B92D8C1CC827780033B614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WVBU Watch App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		D8DC9BA41CCD7CC8002B2979 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "WVBU-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bucknell.jsd013.WVBU-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		D8DC9BA51CCD7CC8002B2979 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "WVBU-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.bucknell.jsd013.WVBU-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Release;
 		};
@@ -697,6 +901,33 @@
 			buildConfigurations = (
 				D8479DE01CC28C5F00D9C32F /* Debug */,
 				D8479DE11CC28C5F00D9C32F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8B92D8D1CC827780033B614 /* Build configuration list for PBXNativeTarget "WVBU Watch App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8B92D8B1CC827780033B614 /* Debug */,
+				D8B92D8C1CC827780033B614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8B92D8F1CC827780033B614 /* Build configuration list for PBXNativeTarget "WVBU Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8B92D891CC827780033B614 /* Debug */,
+				D8B92D8A1CC827780033B614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8DC9BA61CCD7CC8002B2979 /* Build configuration list for PBXNativeTarget "WVBU-TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8DC9BA41CCD7CC8002B2979 /* Debug */,
+				D8DC9BA51CCD7CC8002B2979 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

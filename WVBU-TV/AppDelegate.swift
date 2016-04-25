@@ -1,35 +1,29 @@
 //
 //  AppDelegate.swift
-//  WVBU
+//  WVBU-TV
 //
-//  Created by Joe Duvall on 4/16/16.
+//  Created by Joe Duvall on 4/24/16.
 //  Copyright © 2016 Joe Duvall. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
-import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        setAudioSessionActive(true, callingFunction: #function)
         
-        MPRemoteCommandCenter.sharedCommandCenter().seekForwardCommand.enabled = false
-        MPRemoteCommandCenter.sharedCommandCenter().nextTrackCommand.enabled = false
-        MPRemoteCommandCenter.sharedCommandCenter().seekBackwardCommand.enabled = false
-        MPRemoteCommandCenter.sharedCommandCenter().previousTrackCommand.enabled = false
-        //MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.enabled = false
-        
-        MPRemoteCommandCenter.sharedCommandCenter().playCommand.enabled = true
-        MPRemoteCommandCenter.sharedCommandCenter().playCommand.addTarget(WVBUAudioManager.sharedManager, action: #selector(WVBUAudioManager.sharedManager.play))
-        MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.enabled = true
-        MPRemoteCommandCenter.sharedCommandCenter().pauseCommand.addTarget(WVBUAudioManager.sharedManager, action: #selector(WVBUAudioManager.sharedManager.pause))
-        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+        } catch {
+            print("Error setting category.")
+        }
         
         return true
     }
@@ -46,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        NSNotificationCenter.defaultCenter().postNotificationName(Notifications.applicationWillEnterForeground.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("applicationDidBecomeActiveNotification", object: nil)
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -56,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+
 
 }
 

@@ -45,3 +45,13 @@ func setAudioSessionActive(active: Bool, callingFunction: String? = nil) {
         printError(error, callingFunction: callingFunction, severity: .Important, customString: "Error setting audio category.")
     }
 }
+
+extension UIImage {
+    convenience init?(contentsOfURL url: NSURL) {
+        if let data = NSData(contentsOfURL: url) {
+            self.init(data: data)
+        } else {
+            return nil
+        }
+    }
+}
