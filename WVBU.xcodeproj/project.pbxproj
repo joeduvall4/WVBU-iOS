@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D8261C5D1CD682C900BF6942 /* NBUIKitMainThreadGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C5C1CD682C900BF6942 /* NBUIKitMainThreadGuard.swift */; };
 		D8261C5F1CD68BCA00BF6942 /* WVBUColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8261C5E1CD68BCA00BF6942 /* WVBUColorScheme.swift */; };
 		D8479DB51CC28C5F00D9C32F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */; };
 		D8479DB71CC28C5F00D9C32F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8479DB61CC28C5F00D9C32F /* ViewController.swift */; };
@@ -96,7 +95,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D8261C5C1CD682C900BF6942 /* NBUIKitMainThreadGuard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBUIKitMainThreadGuard.swift; sourceTree = "<group>"; };
 		D8261C5E1CD68BCA00BF6942 /* WVBUColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WVBUColorScheme.swift; path = WVBU/WVBUColorScheme.swift; sourceTree = "<group>"; };
 		D8479DB11CC28C5F00D9C32F /* WVBU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WVBU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8479DB41CC28C5F00D9C32F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		D8479DA81CC28C5F00D9C32F = {
 			isa = PBXGroup;
 			children = (
-				D8261C5C1CD682C900BF6942 /* NBUIKitMainThreadGuard.swift */,
 				D8D238B21CC84C4B00EE7129 /* WVBUMetadataManager.swift */,
 				D8479DE71CC2975100D9C32F /* WVBUAudioManager.swift */,
 				D8261C5E1CD68BCA00BF6942 /* WVBUColorScheme.swift */,
@@ -527,7 +524,6 @@
 				D8479DB51CC28C5F00D9C32F /* AppDelegate.swift in Sources */,
 				D8479DE81CC2975100D9C32F /* WVBUAudioManager.swift in Sources */,
 				D8479DE61CC28D3D00D9C32F /* JDHelpers.swift in Sources */,
-				D8261C5D1CD682C900BF6942 /* NBUIKitMainThreadGuard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
