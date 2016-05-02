@@ -63,12 +63,17 @@ extension InterfaceController: WVBUMetadataManagerDelegate {
     func metadataDidGetNewiTunesURL(url: NSURL?) {
         
     }
+    
     func metadataDidGetNewAlbumArtwork(artworkImage: UIImage) {
-        artworkInterfaceImage.setImage(artworkImage)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.artworkInterfaceImage.setImage(artworkImage)
+        }
     }
     func metadataDidGetNewSongAndArtist(song: String, artist: String) {
-        songLabel.setText(song)
-        artistLabel.setText(artist)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.songLabel.setText(song)
+            self.artistLabel.setText(artist)
+        }
     }
     func metadataDidFailToGetAlbumArtwork(errorString: String) {
         print("Failed to get album artwork.")

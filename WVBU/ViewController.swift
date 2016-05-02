@@ -11,10 +11,18 @@ import UIKit
 class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataManagerDelegate {
 
     @IBOutlet weak var albumArtworkImageView: UIImageView!
-    @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var playPauseButton: UIButton! {
+        didSet {
+            playPauseButton.tintColor = WVBUColorScheme.sharedInstance.buttonColor()
+        }
+    }
     @IBOutlet weak var songLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var iTunesButton: UIButton!
+    @IBOutlet weak var iTunesButton: UIButton! {
+        didSet {
+            iTunesButton.tintColor = WVBUColorScheme.sharedInstance.buttonColor()
+        }
+    }
     @IBOutlet weak var artworkActivityIndicator: UIActivityIndicatorView!
     
     let audioManager = WVBUAudioManager.sharedManager
@@ -54,6 +62,14 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
     override func viewDidLoad() {
         super.viewDidLoad()
         requestMetadataUpdate()
+        let titleImageView = UIImageView(image: UIImage(named: "DarkLogoSkinny"))
+        titleImageView.contentMode = .ScaleAspectFit
+        navigationItem.titleView = titleImageView
+        if navigationController != nil {
+            titleImageView.frame = CGRect(x: 0.0, y: 0.0, width: navigationController!.navigationBar.frame.size.width, height: navigationController!.navigationBar.frame.size.height - 10.0)
+        }
+        
+        //view.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func requestMetadataUpdate() {
@@ -69,20 +85,22 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
 // MARK: - WVBUAudioManagerDelegate
 extension ViewController {
     func audioManagerDidStartPlaying() {
-        playPauseButton.setTitle("Stop", forState: UIControlState.Normal)
+        playPauseButton.setImage(UIImage(named: "Pause"), forState: .Normal)
         requestMetadataUpdate()
     }
     
     func audioManagerDidStopPlaying() {
-        playPauseButton.setTitle("Play", forState: UIControlState.Normal)
+        playPauseButton.setImage(UIImage(named: "Play"), forState: .Normal)
     }
 }
 
 // MARK: - WVBUMetadataManagerDelegate
 extension ViewController {
     func metadataDidGetNewAlbumArtwork(artworkImage: UIImage) {
-        artworkActivityIndicator.stopAnimating()
-        albumArtworkImageView.image = artworkImage
+        dispatch_async(dispatch_get_main_queue()) {
+            self.artworkActivityIndicator.stopAnimating()
+            self.albumArtworkImageView.image = artworkImage
+        }
     }
     
     func metadataDidGetNewiTunesURL(url: NSURL?) {
@@ -90,19 +108,23 @@ extension ViewController {
     }
     
     func metadataDidFailToGetAlbumArtwork(errorString: String) {
-        artworkActivityIndicator.stopAnimating()
-        albumArtworkImageView.image = UIImage(named: "PlaceholderArtwork")
-        print("Metadata Error: \(errorString)")
+        print("Album Artwork Error: \(errorString)")
+        dispatch_async(dispatch_get_main_queue()) {
+            self.artworkActivityIndicator.stopAnimating()
+            self.albumArtworkImageView.image = UIImage(named: "PlaceholderArtwork")
+        }
     }
     
     func metadataDidFailToGetSongAndArtist(errorString: String) {
-        // error
+        print("Metadata Error: \(errorString)")
     }
     
     func metadataDidGetNewSongAndArtist(song: String, artist: String) {
-        artistLabel.text = "\(song)"
-        songLabel.text = "\(artist)"
-        artworkActivityIndicator.startAnimating()
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.artistLabel.text = "\(artist)"
+            self.songLabel.text = "\(song)"
+            self.artworkActivityIndicator.startAnimating()
+        }
     }
 }
 

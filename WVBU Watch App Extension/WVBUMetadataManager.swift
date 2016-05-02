@@ -57,7 +57,8 @@ extension WVBUMetadataManager {
                             currentSongTitle = incomingSong
                             currentSongArtist = incomingArtist
                             delegate?.metadataDidGetNewSongAndArtist(incomingSong, artist: incomingArtist)
-                            searchForAlbumArtwork(song: incomingSong, artist: incomingArtist)
+                            let songToSearchFor = incomingSong.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "[]()"))[0] // make sure we search for only the title of the song.
+                            searchForAlbumArtwork(song: songToSearchFor, artist: incomingArtist)
                         }
                     } else {
                         delegate?.metadataDidFailToGetSongAndArtist("Song and artist not present in downloaded data.")
@@ -130,7 +131,7 @@ extension WVBUMetadataManager {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             if let results = json["results"] as? [[String: AnyObject]] {
                 if results.count > 0 {
-                    
+                    // WE HAVE A MATCH!
                     if let albumArtworkURLString = results[0]["artworkUrl100"] as? String {
                         let albumArtworkURLStringHighRes = albumArtworkURLString.stringByReplacingOccurrencesOfString(AlbumArtworkSize.Default.rawValue, withString: albumArtworkSize.rawValue)
                         if let url = NSURL(string: albumArtworkURLStringHighRes) {
@@ -149,6 +150,7 @@ extension WVBUMetadataManager {
                     }
                     
                 } else {
+                    // NO MATCH.
                     self.delegate?.metadataDidFailToGetAlbumArtwork("No results returned from iTunes search.")
                     self.delegate?.metadataDidGetNewiTunesURL(nil)
                 }

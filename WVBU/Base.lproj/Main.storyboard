@@ -3,7 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -34,70 +36,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fgM-8T-lgl">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gof-ZW-eS9">
+                                <rect key="frame" x="281" y="65.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="301.5" y="313.5" width="37" height="37"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fgM-8T-lgl">
                                 <rect key="frame" x="20" y="84" width="560" height="496"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Hu-oN-alc">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="476"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" image="PlaceholderArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="P8u-DR-j1N">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="166.5"/>
-                                            </imageView>
-                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gof-ZW-eS9">
-                                                <rect key="frame" x="262" y="65" width="37" height="37"/>
-                                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </activityIndicatorView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" misplaced="YES" image="PlaceholderArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="P8u-DR-j1N">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="318"/>
                                         <constraints>
-                                            <constraint firstItem="gof-ZW-eS9" firstAttribute="centerY" secondItem="9Hu-oN-alc" secondAttribute="centerY" id="6kh-Z2-25s"/>
-                                            <constraint firstItem="P8u-DR-j1N" firstAttribute="top" secondItem="9Hu-oN-alc" secondAttribute="top" id="81x-kI-eZf"/>
-                                            <constraint firstItem="gof-ZW-eS9" firstAttribute="centerX" secondItem="9Hu-oN-alc" secondAttribute="centerX" id="KGl-Ux-9qx"/>
-                                            <constraint firstAttribute="bottom" secondItem="P8u-DR-j1N" secondAttribute="bottom" id="lrH-HR-GcA"/>
-                                            <constraint firstItem="P8u-DR-j1N" firstAttribute="leading" secondItem="9Hu-oN-alc" secondAttribute="leading" id="oRV-pU-nME"/>
-                                            <constraint firstAttribute="trailing" secondItem="P8u-DR-j1N" secondAttribute="trailing" id="xcO-6s-VNv"/>
+                                            <constraint firstAttribute="width" secondItem="P8u-DR-j1N" secondAttribute="height" multiplier="1:1" priority="250" id="UVT-8M-qs8"/>
                                         </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7d9-G6-9Xj">
-                                        <rect key="frame" x="0.0" y="486" width="560" height="0.0"/>
+                                        <variation key="widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="496"/>
+                                        </variation>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" misplaced="YES" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xwc-q5-xxT">
+                                        <rect key="frame" x="0.0" y="326" width="560" height="170"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Song" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVa-Et-ujs">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" verticalCompressionResistancePriority="758" misplaced="YES" layoutMarginsFollowReadableWidth="YES" text="Song" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BVa-Et-ujs">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="33"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="376" height="33"/>
+                                                </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLU-Mm-KaW">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" verticalCompressionResistancePriority="757" misplaced="YES" layoutMarginsFollowReadableWidth="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLU-Mm-KaW">
+                                                <rect key="frame" x="0.0" y="37" width="560" height="20"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="37" width="376" height="20"/>
+                                                </variation>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNX-06-bDd">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="756" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNX-06-bDd">
+                                                <rect key="frame" x="0.0" y="60" width="560" height="26"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <state key="normal" title="Show in iTunes Store"/>
+                                                <variation key="widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="60" width="376" height="26"/>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-eJ-Zwt">
+                                                <rect key="frame" x="0.0" y="90" width="560" height="80"/>
+                                                <state key="normal" image="Play"/>
+                                                <variation key="widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="90" width="376" height="406"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="playPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADf-Bg-iUW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="vNX-06-bDd" firstAttribute="height" secondItem="FLU-Mm-KaW" secondAttribute="height" id="cW3-3i-dEo"/>
-                                        </constraints>
+                                        <variation key="widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="384" y="0.0" width="376" height="496"/>
+                                        </variation>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-eJ-Zwt">
-                                        <rect key="frame" x="0.0" y="496" width="560" height="0.0"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <state key="normal" title="Play/Pause"/>
-                                        <connections>
-                                            <action selector="playPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADf-Bg-iUW"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="cKJ-eJ-Zwt" firstAttribute="height" secondItem="7d9-G6-9Xj" secondAttribute="height" id="cj7-7L-I8v"/>
+                                    <constraint firstItem="xwc-q5-xxT" firstAttribute="height" relation="greaterThanOrEqual" secondItem="P8u-DR-j1N" secondAttribute="height" multiplier="0.25" id="BfK-wo-dYe"/>
+                                    <constraint firstItem="P8u-DR-j1N" firstAttribute="width" secondItem="xwc-q5-xxT" secondAttribute="width" id="hhD-kn-fua"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="cj7-7L-I8v"/>
+                                        <exclude reference="hhD-kn-fua"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular" axis="horizontal">
+                                    <mask key="constraints">
+                                        <include reference="hhD-kn-fua"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -108,6 +122,8 @@
                             <constraint firstItem="fgM-8T-lgl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MoA-iw-Ccd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fgM-8T-lgl" secondAttribute="trailing" id="NDa-IJ-Hwb"/>
                             <constraint firstItem="fgM-8T-lgl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Zja-J1-gld"/>
+                            <constraint firstItem="gof-ZW-eS9" firstAttribute="centerX" secondItem="P8u-DR-j1N" secondAttribute="centerX" id="aGw-mU-6Hb"/>
+                            <constraint firstItem="gof-ZW-eS9" firstAttribute="centerY" secondItem="P8u-DR-j1N" secondAttribute="centerY" id="vGf-GZ-qI3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tOD-os-Lwx"/>
@@ -127,5 +143,6 @@
     </scenes>
     <resources>
         <image name="PlaceholderArtwork" width="600" height="600"/>
+        <image name="Play" width="80" height="80"/>
     </resources>
 </document>
