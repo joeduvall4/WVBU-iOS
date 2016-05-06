@@ -109,7 +109,9 @@ extension ViewController {
     }
     
     func metadataDidGetNewiTunesURL(url: NSURL?) {
-        currentURL = url
+        dispatch_async(dispatch_get_main_queue()) {
+            currentURL = url
+        }
     }
     
     func metadataDidFailToGetAlbumArtwork(errorString: String) {

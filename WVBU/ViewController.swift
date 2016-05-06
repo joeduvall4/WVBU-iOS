@@ -152,7 +152,9 @@ extension ViewController {
     }
     
     func metadataDidGetNewiTunesURL(url: NSURL?) {
-        currentURL = url
+        dispatch_async(dispatch_get_main_queue()) {
+            self.currentURL = url
+        }
     }
     
     func metadataDidFailToGetAlbumArtwork(errorString: String) {
@@ -188,8 +190,10 @@ extension ViewController {
         }
     }
     
-    func metadataDidGetNewTrackID(trackID: String) {
-        self.trackID = trackID
+    func metadataDidGetNewTrackID(trackID: String?) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.trackID = trackID
+        }
     }
 }
 

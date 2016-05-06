@@ -9,12 +9,6 @@
 import UIKit
 import AVFoundation
 
-// MARK: - URLs
-
-enum URLStrings: String {
-    case MainStream = "http://stream.bucknell.edu:90/wvbu.m3u"
-}
-
 // MARK: - NSNotificationCenter Constants
 
 enum Notifications: String {

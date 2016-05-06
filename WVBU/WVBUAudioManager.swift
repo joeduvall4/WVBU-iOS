@@ -17,6 +17,12 @@ protocol WVBUAudioManagerDelegate {
 }
 
 class WVBUAudioManager: NSObject {
+    
+    // MARK: - URLs
+    
+    enum AudioURLStrings: String {
+        case MainStream = "http://stream.bucknell.edu:90/wvbu.m3u"
+    }
 
     /// The shared instance of `WVBUAudioManager`.
     static let sharedManager = WVBUAudioManager()
@@ -28,7 +34,7 @@ class WVBUAudioManager: NSObject {
     /// The `AVPlayer` managed by the `WVBUAudioManager`. 
     /// - Note: This will never be nil, but may be reinitialized at any time.
     /// - Note: This is a private variable; interaction with this `AVPlayer` instance should be handled through the `WVBUAudioManager` `sharedManager`.
-    private var player = AVPlayer(URL: NSURL(string: URLStrings.MainStream.rawValue)!)
+    private var player = AVPlayer(URL: NSURL(string: AudioURLStrings.MainStream.rawValue)!)
     
     /// Indicates whether the audio session is currently in an interrupted state.
     var interrupted: Bool = false
@@ -50,7 +56,7 @@ class WVBUAudioManager: NSObject {
     /// Plays the audio. 
     /// To ensure that users are always listening to the live stream, this method reinitializes the `AVPlayer` instance.
     @objc func play() {
-        player = AVPlayer(URL: NSURL(string: URLStrings.MainStream.rawValue)!) // Re-Initialize Player
+        player = AVPlayer(URL: NSURL(string: AudioURLStrings.MainStream.rawValue)!) // Re-Initialize Player
         player.play()
         if player.isPlaying {
             print("Playing")
