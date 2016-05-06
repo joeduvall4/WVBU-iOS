@@ -10,7 +10,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WVBU_Watch_App" customModuleProvider="target">
                     <items>
-                        <imageView height="0.5" alignment="center" contentMode="scaleAspectFit" id="aPw-UL-Ljb"/>
+                        <imageView height="20" alignment="center" image="WhiteLogo" contentMode="scaleAspectFit" id="m77-bQ-82N"/>
+                        <separator alignment="left" id="fey-T0-OiK"/>
+                        <imageView width="1" height="0.5" alignment="center" image="PlaceholderArtworkWatch" contentMode="scaleAspectFit" id="aPw-UL-Ljb"/>
                         <label alignment="center" text="Song" textAlignment="center" numberOfLines="2" id="SB4-Fy-fMD">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>

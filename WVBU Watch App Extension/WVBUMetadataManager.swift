@@ -16,10 +16,11 @@ import UIKit
 
 // MARK: - WVBUMetadataManagerDelegate Protocol
 
-protocol WVBUMetadataManagerDelegate {
+@objc protocol WVBUMetadataManagerDelegate {
     func metadataDidGetNewiTunesURL(url: NSURL?)
     func metadataDidGetNewAlbumArtwork(artworkImage: UIImage)
     func metadataDidGetNewSongAndArtist(song: String, artist: String)
+    optional func metadataDidGetNewTrackID(trackID: String)
     func metadataDidFailToGetAlbumArtwork(errorString: String)
     func metadataDidFailToGetSongAndArtist(errorString: String)
 }
@@ -147,6 +148,11 @@ extension WVBUMetadataManager {
                         self.delegate?.metadataDidGetNewiTunesURL(NSURL(string: trackURLString))
                     } else {
                         self.delegate?.metadataDidGetNewiTunesURL(nil)
+                    }
+                    
+                    if let trackIDString = results[0]["trackId"] as? String {
+                        print(trackIDString)
+                        self.delegate?.metadataDidGetNewTrackID?(trackIDString)
                     }
                     
                 } else {

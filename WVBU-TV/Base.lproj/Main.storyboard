@@ -29,31 +29,36 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhq-Zc-g6I">
-                                <rect key="frame" x="849" y="945" width="223" height="86"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="223" id="pHo-uU-SlZ"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="playPressed:" destination="HLU-Nr-Mlf" eventType="primaryActionTriggered" id="FEV-kr-ccs"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoK-iV-NXB">
-                                <rect key="frame" x="1165" y="945" width="193" height="86"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="iTunes"/>
-                                <connections>
-                                    <action selector="iTunesPressed:" destination="HLU-Nr-Mlf" eventType="primaryActionTriggered" id="3pw-xG-tFs"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zzZ-ig-ZRk">
                                 <rect key="frame" x="928" y="516" width="64" height="64"/>
                                 <color key="color" red="0.019607843140000001" green="0.21960784310000001" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ELC-oj-hHz">
+                                <rect key="frame" x="717" y="959" width="528" height="86"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhq-Zc-g6I">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="86"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="playPressed:" destination="HLU-Nr-Mlf" eventType="primaryActionTriggered" id="FEV-kr-ccs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoK-iV-NXB">
+                                        <rect key="frame" x="284" y="0.0" width="244" height="86"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title=" MUSIC"/>
+                                        <connections>
+                                            <action selector="iTunesPressed:" destination="HLU-Nr-Mlf" eventType="primaryActionTriggered" id="3pw-xG-tFs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ELC-oj-hHz" firstAttribute="centerX" secondItem="2SB-2L-Rh5" secondAttribute="centerX" id="L3m-ax-UGe"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="albumArtworkImageView" destination="JYf-hY-T4U" id="jIX-If-nC2"/>

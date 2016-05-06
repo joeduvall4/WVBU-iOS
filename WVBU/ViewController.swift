@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MediaPlayer
+import StoreKit
 
 class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataManagerDelegate {
 
@@ -24,6 +26,7 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
         }
     }
     @IBOutlet weak var artworkActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addToLibraryButton: UIButton!
     
     let audioManager = WVBUAudioManager.sharedManager
     
@@ -39,6 +42,16 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
                 iTunesButton.enabled = false
             } else {
                 iTunesButton.enabled = true
+            }
+        }
+    }
+    
+    var trackID: String? {
+        didSet {
+            if trackID == nil {
+                addToLibraryButton.enabled = false
+            } else {
+                addToLibraryButton.enabled = true
             }
         }
     }
@@ -80,6 +93,34 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
         audioManager.playPause()
     }
     
+    @IBAction func iTunesPressed(sender: UIButton) {
+        if currentURL != nil {
+            let success = UIApplication.sharedApplication().openURL(currentURL!)
+            print("Open URL \(currentURL) \(success)")
+        }
+    }
+    
+    @IBAction func addToLibraryPressed(sender: UIButton) {
+        guard trackID != nil else { return }
+        if SKCloudServiceController.authorizationStatus() != .Authorized {
+            SKCloudServiceController.requestAuthorization({ (status: SKCloudServiceAuthorizationStatus) in
+                if status == .Authorized {
+                    MPMediaLibrary.defaultMediaLibrary().addItemWithProductID(self.trackID!) { (entity: [MPMediaEntity], error: NSError?) in
+                        if error != nil {
+                            print(error!.localizedDescription)
+                        }
+                    }
+                }
+            })
+        } else {
+            MPMediaLibrary.defaultMediaLibrary().addItemWithProductID(trackID!) { (entity: [MPMediaEntity], error: NSError?) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+            }
+        }
+    }
+    
 }
 
 // MARK: - WVBUAudioManagerDelegate
@@ -100,6 +141,13 @@ extension ViewController {
         dispatch_async(dispatch_get_main_queue()) {
             self.artworkActivityIndicator.stopAnimating()
             self.albumArtworkImageView.image = artworkImage
+            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
+            if nowPlayingInfo == nil {
+                nowPlayingInfo = [String : AnyObject]()
+            }
+            let mediaItemArtwork = MPMediaItemArtwork(image: artworkImage)
+            nowPlayingInfo![MPMediaItemPropertyArtwork] = mediaItemArtwork
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
         }
     }
     
@@ -112,6 +160,12 @@ extension ViewController {
         dispatch_async(dispatch_get_main_queue()) {
             self.artworkActivityIndicator.stopAnimating()
             self.albumArtworkImageView.image = UIImage(named: "PlaceholderArtwork")
+            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
+            if nowPlayingInfo == nil {
+                nowPlayingInfo = [String : AnyObject]()
+            }
+            nowPlayingInfo![MPMediaItemPropertyArtwork] = nil
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
         }
     }
     
@@ -120,11 +174,22 @@ extension ViewController {
     }
     
     func metadataDidGetNewSongAndArtist(song: String, artist: String) {
-        dispatch_async(dispatch_get_main_queue()) { 
+        dispatch_async(dispatch_get_main_queue()) {
+            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
+            if nowPlayingInfo == nil {
+                nowPlayingInfo = [String : AnyObject]()
+            }
+            nowPlayingInfo![MPMediaItemPropertyArtist] = artist
+            nowPlayingInfo![MPMediaItemPropertyTitle] = song
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
             self.artistLabel.text = "\(artist)"
             self.songLabel.text = "\(song)"
             self.artworkActivityIndicator.startAnimating()
         }
+    }
+    
+    func metadataDidGetNewTrackID(trackID: String) {
+        self.trackID = trackID
     }
 }
 

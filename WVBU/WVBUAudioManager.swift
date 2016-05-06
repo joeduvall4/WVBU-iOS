@@ -94,6 +94,7 @@ class WVBUAudioManager: NSObject {
     ///  We will also be notified when the interruption has ended, allowing us to automatically resume playing audio.
     /// This is automatically called by the built-in `AVAudioSessionInterruptionNotification`.
     @objc private func audioSessionInterrupted(notification: NSNotification) {
+        print("DEBUG: Audio Session was interrupted.")
         if let interruptionType = notification.userInfo?[AVAudioSessionInterruptionTypeKey] as? AVAudioSessionInterruptionType {
             switch interruptionType {
             case .Began:

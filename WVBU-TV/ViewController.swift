@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import MediaPlayer
 
 class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataManagerDelegate {
     
@@ -101,8 +102,10 @@ extension ViewController {
 // MARK: - WVBUMetadataManagerDelegate
 extension ViewController {
     func metadataDidGetNewAlbumArtwork(artworkImage: UIImage) {
-        artworkActivityIndicator.stopAnimating()
-        albumArtworkImageView.image = artworkImage
+        dispatch_async(dispatch_get_main_queue()) {
+            self.artworkActivityIndicator.stopAnimating()
+            self.albumArtworkImageView.image = artworkImage
+        }
     }
     
     func metadataDidGetNewiTunesURL(url: NSURL?) {
@@ -110,17 +113,35 @@ extension ViewController {
     }
     
     func metadataDidFailToGetAlbumArtwork(errorString: String) {
-        artworkActivityIndicator.stopAnimating()
-        albumArtworkImageView.image = UIImage(named: "PlaceholderArtwork")
-        print("Metadata Error: \(errorString)")
+        print("Album Artwork Error: \(errorString)")
+        dispatch_async(dispatch_get_main_queue()) {
+            self.artworkActivityIndicator.stopAnimating()
+            self.albumArtworkImageView.image = UIImage(named: "PlaceholderArtwork")
+            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
+            if nowPlayingInfo == nil {
+                nowPlayingInfo = [String : AnyObject]()
+            }
+            nowPlayingInfo![MPMediaItemPropertyArtwork] = nil
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
+        }
     }
     
     func metadataDidFailToGetSongAndArtist(errorString: String) {
-        // error
+        print("Metadata Error: \(errorString)")
     }
     
     func metadataDidGetNewSongAndArtist(song: String, artist: String) {
-        artistLabel.text = "\(artist) – \(song)"
-        artworkActivityIndicator.startAnimating()
+        dispatch_async(dispatch_get_main_queue()) {
+            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
+            if nowPlayingInfo == nil {
+                nowPlayingInfo = [String : AnyObject]()
+            }
+            nowPlayingInfo![MPMediaItemPropertyArtist] = artist
+            nowPlayingInfo![MPMediaItemPropertyTitle] = song
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
+            self.artistLabel.text = "\(artist) – \(song)"
+            self.artworkActivityIndicator.startAnimating()
+        }
     }
+    
 }
