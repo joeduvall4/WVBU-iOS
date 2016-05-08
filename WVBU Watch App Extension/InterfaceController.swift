@@ -60,25 +60,21 @@ class InterfaceController: WKInterfaceController {
 
 extension InterfaceController: WVBUMetadataManagerDelegate {
     
-    func metadataDidGetNewiTunesURL(url: NSURL?) {
-        
-    }
-    
     func metadataDidGetNewAlbumArtwork(artworkImage: UIImage) {
         dispatch_async(dispatch_get_main_queue()) {
             self.artworkInterfaceImage.setImage(artworkImage)
         }
     }
-    func metadataDidGetNewSongAndArtist(song: String, artist: String) {
+    func metadataDidGetNewSong(song: Song) {
         dispatch_async(dispatch_get_main_queue()) {
-            self.songLabel.setText(song)
-            self.artistLabel.setText(artist)
+            self.songLabel.setText(song.title)
+            self.artistLabel.setText(song.artist)
         }
     }
-    func metadataDidFailToGetAlbumArtwork(errorString: String) {
+    func metadataDidFailToGetAlbumArtwork(errorString: String?) {
         print("Failed to get album artwork.")
     }
-    func metadataDidFailToGetSongAndArtist(errorString: String) {
+    func metadataDidFailToGetSongAndArtist(errorString: String?) {
         print("Failed to get song and artist.")
     }
     

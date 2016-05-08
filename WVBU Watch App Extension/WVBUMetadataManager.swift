@@ -12,17 +12,35 @@ import WatchKit
 import Foundation
 #else
 import UIKit
+import MediaPlayer
 #endif
+
+struct Song: Equatable {
+    var title: String
+    var artist: String
+}
+
+func == (left: Song, right: Song) -> Bool {
+    return (left.title == right.title) && (left.artist == right.artist)
+}
 
 // MARK: - WVBUMetadataManagerDelegate Protocol
 
-@objc protocol WVBUMetadataManagerDelegate {
+protocol WVBUMetadataManagerDelegate {
     func metadataDidGetNewAlbumArtwork(artworkImage: UIImage)
-    func metadataDidGetNewSongAndArtist(song: String, artist: String)
-    func metadataDidFailToGetAlbumArtwork(errorString: String)
-    func metadataDidFailToGetSongAndArtist(errorString: String)
-    optional func metadataDidGetNewiTunesURL(url: NSURL?)
-    optional func metadataDidGetNewTrackID(trackID: String?)
+    func metadataDidGetNewSong(song: Song)
+    func metadataDidFailToGetAlbumArtwork(errorString: String?)
+    func metadataDidFailToGetSongAndArtist(errorString: String?)
+    func metadataDidGetNewiTunesURL(url: NSURL?)
+    func metadataDidGetNewTrackID(trackID: String?)
+}
+
+// Default empty implementations of delegate methods we want to be optional.
+//  We do this because in order to declare a protocol method as optional, @objc must be used.
+//  If @objc is used, Swift structs cannot be used as parameters.
+extension WVBUMetadataManagerDelegate {
+    func metadataDidGetNewiTunesURL(url: NSURL?) { }
+    func metadataDidGetNewTrackID(trackID: String?) { }
 }
 
 // MARK: - WVBUMetadataManager
@@ -31,10 +49,33 @@ class WVBUMetadataManager {
     
     var delegate: WVBUMetadataManagerDelegate?
     
-    var currentSongTitle: String?
-    var currentSongArtist: String?
-    var currentSongiTunesURL: NSURL?
-    var currentSongAlbumArtwork: UIImage?
+    var previousSong: Song?
+    var currentSong: Song? {
+        didSet {
+            if oldValue != currentSong && currentSong != nil {
+                previousSong = oldValue
+                delegate?.metadataDidGetNewSong(currentSong!)
+                updateOSNowPlayingInfoCenter(.SongOnly)
+                searchForAlbumArtwork(song: currentSong!.title, artist: currentSong!.artist)
+            }
+        }
+    }
+    var currentSongiTunesURL: NSURL? {
+        didSet { delegate?.metadataDidGetNewiTunesURL(currentSongiTunesURL) }
+    }
+    var currentSongTrackID: String? {
+        didSet { delegate?.metadataDidGetNewTrackID(currentSongTrackID) }
+    }
+    var currentSongAlbumArtwork: UIImage? {
+        didSet {
+            if currentSongAlbumArtwork != nil {
+                delegate?.metadataDidGetNewAlbumArtwork(currentSongAlbumArtwork!)
+            } else {
+                delegate?.metadataDidFailToGetAlbumArtwork("")
+            }
+            updateOSNowPlayingInfoCenter(.ArtworkOnly)
+        }
+    }
     
     private enum MetadataURLString: String {
         case NowPlayingTextFile = "http://eg.bucknell.edu/~wvbu/current.txt"
@@ -45,11 +86,40 @@ class WVBUMetadataManager {
         case HTTPMethod = "GET"
     }
     
-}
-
-enum MetadataError: ErrorType {
-    case NowPlaying(description: String)
-    case Search(description: String)
+    enum MetadataError: ErrorType {
+        case NowPlaying(description: String)
+        case Search(description: String)
+    }
+    
+    enum UpdateType {
+        case SongAndArtwork, SongOnly, ArtworkOnly
+    }
+    
+    func updateOSNowPlayingInfoCenter(updateType: UpdateType) {
+        #if os(watchOS)
+            return
+        #else
+            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
+            if nowPlayingInfo == nil {
+                nowPlayingInfo = [String : AnyObject]()
+            }
+            if updateType == .SongAndArtwork || updateType == .SongOnly {
+                if currentSong != nil {
+                    nowPlayingInfo![MPMediaItemPropertyTitle] = currentSong!.title
+                    nowPlayingInfo![MPMediaItemPropertyArtist] = currentSong!.artist
+                }
+            }
+            if updateType == .SongAndArtwork || updateType == .ArtworkOnly {
+                if currentSongAlbumArtwork != nil {
+                    nowPlayingInfo![MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: currentSongAlbumArtwork!)
+                } else {
+                    nowPlayingInfo![MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: UIImage(named: "PlaceholderArtwork")!)
+                }
+            }
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
+        #endif
+    }
+    
 }
 
 // MARK: - Retrieve Now Playing Metadata
@@ -62,10 +132,7 @@ extension WVBUMetadataManager {
 
     private func handleNowPlayingResult(data: NSData?, response: NSURLResponse?, error: NSError?) {
         guard error == nil && data != nil else {
-            delegate?.metadataDidFailToGetSongAndArtist("Unable to get currently-playing song (an error occurred).")
-            delegate?.metadataDidFailToGetAlbumArtwork("No now playing data available to search on.")
-            delegate?.metadataDidGetNewiTunesURL?(nil)
-            delegate?.metadataDidGetNewTrackID?(nil)
+            failedToUpdateNowPlayingMetadata("Unable to get currently-playing song (an error occurred).")
             return
         }
         if let nowPlayingString = String(data: data!, encoding: NSUTF8StringEncoding) {
@@ -73,29 +140,20 @@ extension WVBUMetadataManager {
             let currentSongAttributes = nowPlayingStringCleaned.componentsSeparatedByString("-")
             // should check for a count greater than 2.
             if currentSongAttributes.count > 1 {
-                let incomingSong = currentSongAttributes[1]
-                let incomingArtist = currentSongAttributes[0]
-                if incomingSong == currentSongTitle && incomingArtist == currentSongArtist {
-                    return // no update needed
-                } else {
-                    currentSongTitle = incomingSong
-                    currentSongArtist = incomingArtist
-                    delegate?.metadataDidGetNewSongAndArtist(incomingSong, artist: incomingArtist)
-                    let songToSearchFor = incomingSong.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "[]()"))[0] // make sure we search for only the title of the song.
-                    searchForAlbumArtwork(song: songToSearchFor, artist: incomingArtist)
-                }
+                currentSong = Song(title: currentSongAttributes[1], artist: currentSongAttributes[0])
             } else {
-                delegate?.metadataDidFailToGetSongAndArtist("Song and artist not present in downloaded data.")
-                delegate?.metadataDidFailToGetAlbumArtwork("No now playing data available to search on.")
-                delegate?.metadataDidGetNewiTunesURL?(nil)
-                delegate?.metadataDidGetNewTrackID?(nil)
+                failedToUpdateNowPlayingMetadata("Song and artist not present in downloaded data.")
             }
         } else {
-            delegate?.metadataDidFailToGetSongAndArtist("Could not parse data as string.")
-            delegate?.metadataDidFailToGetAlbumArtwork("No now playing data available to search on.")
-            delegate?.metadataDidGetNewiTunesURL?(nil)
-            delegate?.metadataDidGetNewTrackID?(nil)
+            failedToUpdateNowPlayingMetadata("Could not parse data as string.")
         }
+    }
+    
+    private func failedToUpdateNowPlayingMetadata(errorString: String?) {
+        delegate?.metadataDidFailToGetSongAndArtist(errorString)
+        currentSongAlbumArtwork = nil
+        currentSongiTunesURL = nil
+        currentSongTrackID = nil
     }
 
 }
@@ -111,7 +169,9 @@ extension WVBUMetadataManager {
     }
     
     private func searchForAlbumArtwork(song song: String, artist: String) {
-        sendiTunesRequest("\(song) \(artist)")
+        let searchSong = song.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "[]()"))[0] // make sure we search for only the title of the song.
+        let searchArtist = artist.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "[]()"))[0] // make sure we search for only for first part of artist.
+        sendiTunesRequest("\(searchSong) \(searchArtist)")
     }
     
     private func getAlbumArtworkSizeForCurrentPlatform() -> AlbumArtworkSize {
@@ -126,8 +186,8 @@ extension WVBUMetadataManager {
         sendiTunesSearchRequest(searchTerm) { (data: NSData?, response: NSURLResponse?, error: NSError?) in
             guard error == nil && data != nil else {
                 self.delegate?.metadataDidFailToGetAlbumArtwork("Request to iTunes API returned an error.")
-                self.delegate?.metadataDidGetNewiTunesURL?(nil)
-                self.delegate?.metadataDidGetNewTrackID?(nil)
+                self.currentSongiTunesURL = nil
+                self.currentSongTrackID = nil
                 return
             }
             self.parseiTunesJSONResponse(data!)
@@ -145,15 +205,8 @@ extension WVBUMetadataManager {
                     } else {
                         self.delegate?.metadataDidFailToGetAlbumArtwork("Could not get URL from iTunes search results.")
                     }
-                    
-                    if let trackURLString = results[0]["trackViewUrl"] as? String {
-                        self.delegate?.metadataDidGetNewiTunesURL?(NSURL(string: trackURLString))
-                    } else {
-                        self.delegate?.metadataDidGetNewiTunesURL?(nil)
-                    }
-                    
-                    self.delegate?.metadataDidGetNewTrackID?(results[0]["trackId"] as? String)
-                    
+                    self.currentSongiTunesURL = NSURL(stringOptional: results[0]["trackViewUrl"] as? String)
+                    self.currentSongTrackID = results[0]["trackId"] as? String
                 } else {
                     throw MetadataError.Search(description: "No results for iTunes search.")
                 }
@@ -162,10 +215,12 @@ extension WVBUMetadataManager {
             }
         } catch MetadataError.Search(let description) {
             self.delegate?.metadataDidFailToGetAlbumArtwork(description)
-            self.delegate?.metadataDidGetNewiTunesURL?(nil)
+            self.currentSongiTunesURL = nil
+            self.currentSongTrackID = nil
         } catch {
             self.delegate?.metadataDidFailToGetAlbumArtwork("Error parsing data from iTunes: \(error)")
-            self.delegate?.metadataDidGetNewiTunesURL?(nil)
+            self.currentSongiTunesURL = nil
+            self.currentSongTrackID = nil
         }
     }
     
@@ -258,6 +313,14 @@ extension NSURL {
     func URLByAppendingQueryParameters(parametersDictionary : Dictionary<String, String>) -> NSURL {
         let URLString : NSString = NSString(format: "%@?%@", self.absoluteString, parametersDictionary.queryParameters)
         return NSURL(string: URLString as String)!
+    }
+    
+    convenience init?(stringOptional string: String?) {
+        if string != nil {
+            self.init(string: string!)
+        } else {
+            return nil
+        }
     }
     
 }

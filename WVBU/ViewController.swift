@@ -141,13 +141,6 @@ extension ViewController {
         dispatch_async(dispatch_get_main_queue()) {
             self.artworkActivityIndicator.stopAnimating()
             self.albumArtworkImageView.image = artworkImage
-            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
-            if nowPlayingInfo == nil {
-                nowPlayingInfo = [String : AnyObject]()
-            }
-            let mediaItemArtwork = MPMediaItemArtwork(image: artworkImage)
-            nowPlayingInfo![MPMediaItemPropertyArtwork] = mediaItemArtwork
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
         }
     }
     
@@ -157,35 +150,22 @@ extension ViewController {
         }
     }
     
-    func metadataDidFailToGetAlbumArtwork(errorString: String) {
+    func metadataDidFailToGetAlbumArtwork(errorString: String?) {
         print("Album Artwork Error: \(errorString)")
         dispatch_async(dispatch_get_main_queue()) {
             self.artworkActivityIndicator.stopAnimating()
             self.albumArtworkImageView.image = UIImage(named: "PlaceholderArtwork")
-            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
-            if nowPlayingInfo == nil {
-                nowPlayingInfo = [String : AnyObject]()
-            }
-            nowPlayingInfo![MPMediaItemPropertyArtwork] = nil
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
         }
     }
     
-    func metadataDidFailToGetSongAndArtist(errorString: String) {
+    func metadataDidFailToGetSongAndArtist(errorString: String?) {
         print("Metadata Error: \(errorString)")
     }
     
-    func metadataDidGetNewSongAndArtist(song: String, artist: String) {
+    func metadataDidGetNewSong(song: Song) {
         dispatch_async(dispatch_get_main_queue()) {
-            var nowPlayingInfo = MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo
-            if nowPlayingInfo == nil {
-                nowPlayingInfo = [String : AnyObject]()
-            }
-            nowPlayingInfo![MPMediaItemPropertyArtist] = artist
-            nowPlayingInfo![MPMediaItemPropertyTitle] = song
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nowPlayingInfo
-            self.artistLabel.text = "\(artist)"
-            self.songLabel.text = "\(song)"
+            self.artistLabel.text = "\(song.artist)"
+            self.songLabel.text = "\(song.title)"
             self.artworkActivityIndicator.startAnimating()
         }
     }
