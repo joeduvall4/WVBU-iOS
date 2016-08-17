@@ -34,14 +34,14 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
     
     /// Timer to manage the interval between metadata updates.
     /// -Note: This is implicitly-unwrapped because we can't initialize it before the super.init call.
-    var metadataUpdateTimer: NSTimer!
+    var metadataUpdateTimer: Timer!
     
-    var currentURL: NSURL? {
+    var currentURL: URL? {
         didSet {
             if currentURL == nil {
-                iTunesButton.enabled = false
+                iTunesButton.isEnabled = false
             } else {
-                iTunesButton.enabled = true
+                iTunesButton.isEnabled = true
             }
         }
     }
@@ -49,9 +49,9 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
     var trackID: String? {
         didSet {
             if trackID == nil {
-                addToLibraryButton.enabled = false
+                addToLibraryButton.isEnabled = false
             } else {
-                addToLibraryButton.enabled = true
+                addToLibraryButton.isEnabled = true
             }
         }
     }
@@ -61,22 +61,22 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
         initialize()
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initialize()
     }
     
-    private func initialize() {
+    fileprivate func initialize() {
         audioManager.delegate = self
         metadataManager.delegate = self
-        metadataUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(requestMetadataUpdate), userInfo: nil, repeats: true)
+        metadataUpdateTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(requestMetadataUpdate), userInfo: nil, repeats: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         requestMetadataUpdate()
         let titleImageView = UIImageView(image: UIImage(named: "DarkLogoSkinny"))
-        titleImageView.contentMode = .ScaleAspectFit
+        titleImageView.contentMode = .scaleAspectFit
         navigationItem.titleView = titleImageView
         if navigationController != nil {
             titleImageView.frame = CGRect(x: 0.0, y: 0.0, width: navigationController!.navigationBar.frame.size.width, height: navigationController!.navigationBar.frame.size.height - 10.0)
@@ -89,23 +89,23 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
         metadataManager.requestMetadataUpdate()
     }
     
-    @IBAction func playPressed(sender: UIButton) {
+    @IBAction func playPressed(_ sender: UIButton) {
         audioManager.playPause()
     }
     
-    @IBAction func iTunesPressed(sender: UIButton) {
+    @IBAction func iTunesPressed(_ sender: UIButton) {
         if currentURL != nil {
-            let success = UIApplication.sharedApplication().openURL(currentURL!)
+            let success = UIApplication.shared.openURL(currentURL!)
             print("Open URL \(currentURL) \(success)")
         }
     }
     
-    @IBAction func addToLibraryPressed(sender: UIButton) {
+    @IBAction func addToLibraryPressed(_ sender: UIButton) {
         guard trackID != nil else { return }
-        if SKCloudServiceController.authorizationStatus() != .Authorized {
+        if SKCloudServiceController.authorizationStatus() != .authorized {
             SKCloudServiceController.requestAuthorization({ (status: SKCloudServiceAuthorizationStatus) in
-                if status == .Authorized {
-                    MPMediaLibrary.defaultMediaLibrary().addItemWithProductID(self.trackID!) { (entity: [MPMediaEntity], error: NSError?) in
+                if status == .authorized {
+                    MPMediaLibrary.default().addItem(withProductID: self.trackID!) { (entity: [MPMediaEntity], error: Error?) in
                         if error != nil {
                             print(error!.localizedDescription)
                         }
@@ -113,7 +113,7 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
                 }
             })
         } else {
-            MPMediaLibrary.defaultMediaLibrary().addItemWithProductID(trackID!) { (entity: [MPMediaEntity], error: NSError?) in
+            MPMediaLibrary.default().addItem(withProductID: trackID!) { (entity: [MPMediaEntity], error: Error?) in
                 if error != nil {
                     print(error!.localizedDescription)
                 }
@@ -126,52 +126,52 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
 // MARK: - WVBUAudioManagerDelegate
 extension ViewController {
     func audioManagerDidStartPlaying() {
-        playPauseButton.setImage(UIImage(named: "Pause"), forState: .Normal)
+        playPauseButton.setImage(UIImage(named: "Pause"), for: UIControlState())
         requestMetadataUpdate()
     }
     
     func audioManagerDidStopPlaying() {
-        playPauseButton.setImage(UIImage(named: "Play"), forState: .Normal)
+        playPauseButton.setImage(UIImage(named: "Play"), for: UIControlState())
     }
 }
 
 // MARK: - WVBUMetadataManagerDelegate
 extension ViewController {
-    func metadataDidGetNewAlbumArtwork(artworkImage: UIImage) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func metadataDidGetNewAlbumArtwork(_ artworkImage: UIImage) {
+        DispatchQueue.main.async {
             self.artworkActivityIndicator.stopAnimating()
             self.albumArtworkImageView.image = artworkImage
         }
     }
     
-    func metadataDidGetNewiTunesURL(url: NSURL?) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func metadataDidGetNewiTunesURL(_ url: URL?) {
+        DispatchQueue.main.async {
             self.currentURL = url
         }
     }
     
-    func metadataDidFailToGetAlbumArtwork(errorString: String?) {
+    func metadataDidFailToGetAlbumArtwork(_ errorString: String?) {
         print("Album Artwork Error: \(errorString)")
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             self.artworkActivityIndicator.stopAnimating()
             self.albumArtworkImageView.image = UIImage(named: "PlaceholderArtwork")
         }
     }
     
-    func metadataDidFailToGetSongAndArtist(errorString: String?) {
+    func metadataDidFailToGetSongAndArtist(_ errorString: String?) {
         print("Metadata Error: \(errorString)")
     }
     
-    func metadataDidGetNewSong(song: Song) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func metadataDidGetNewSong(_ song: Song) {
+        DispatchQueue.main.async {
             self.artistLabel.text = "\(song.artist)"
             self.songLabel.text = "\(song.title)"
             self.artworkActivityIndicator.startAnimating()
         }
     }
     
-    func metadataDidGetNewTrackID(trackID: String?) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func metadataDidGetNewTrackID(_ trackID: String?) {
+        DispatchQueue.main.async {
             self.trackID = trackID
         }
     }

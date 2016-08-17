@@ -22,7 +22,7 @@ class InterfaceController: WKInterfaceController {
     
     /// Timer to manage the interval between metadata updates.
     /// -Note: This is implicitly-unwrapped because we can't initialize it before the super.init call.
-    var metadataUpdateTimer: NSTimer!
+    var metadataUpdateTimer: Timer!
     
     override init() {
         super.init()
@@ -31,11 +31,11 @@ class InterfaceController: WKInterfaceController {
     
     func initialize() {
         metadataManager.delegate = self
-        metadataUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(requestMetadataUpdate), userInfo: nil, repeats: true)
+        metadataUpdateTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(requestMetadataUpdate), userInfo: nil, repeats: true)
     }
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         // Configure interface objects here.
     }
 
@@ -60,21 +60,21 @@ class InterfaceController: WKInterfaceController {
 
 extension InterfaceController: WVBUMetadataManagerDelegate {
     
-    func metadataDidGetNewAlbumArtwork(artworkImage: UIImage) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func metadataDidGetNewAlbumArtwork(_ artworkImage: UIImage) {
+        DispatchQueue.main.async {
             self.artworkInterfaceImage.setImage(artworkImage)
         }
     }
-    func metadataDidGetNewSong(song: Song) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func metadataDidGetNewSong(_ song: Song) {
+        DispatchQueue.main.async {
             self.songLabel.setText(song.title)
             self.artistLabel.setText(song.artist)
         }
     }
-    func metadataDidFailToGetAlbumArtwork(errorString: String?) {
+    func metadataDidFailToGetAlbumArtwork(_ errorString: String?) {
         print("Failed to get album artwork.")
     }
-    func metadataDidFailToGetSongAndArtist(errorString: String?) {
+    func metadataDidFailToGetSongAndArtist(_ errorString: String?) {
         print("Failed to get song and artist.")
     }
     

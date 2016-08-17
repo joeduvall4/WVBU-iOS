@@ -11,55 +11,55 @@ import UIKit
 class WVBUColorScheme {
     
     enum ColorMode {
-        case LightMode
-        case DarkMode
+        case lightMode
+        case darkMode
     }
     
     static let sharedInstance = WVBUColorScheme()
     
-    var currentMode: ColorMode = .LightMode
+    var currentMode: ColorMode = .lightMode
     
     func textColor() -> UIColor {
         switch currentMode {
-        case .DarkMode:
+        case .darkMode:
             return UIColor(hexValue: 0xFFFFFF)
-        case .LightMode:
+        case .lightMode:
             return UIColor(hexValue: 0x000000)
         }
     }
     
     func buttonColor() -> UIColor {
         switch currentMode {
-        case .DarkMode:
+        case .darkMode:
             return UIColor(hexValue: 0xFFFFFF)
-        case .LightMode:
+        case .lightMode:
             return UIColor(hexValue: 0x004B8E)
         }
     }
     
     func backgroundColor() -> UIColor {
         switch currentMode {
-        case .DarkMode:
+        case .darkMode:
             return UIColor(hexValue: 0x505050)
-        case .LightMode:
+        case .lightMode:
             return UIColor(hexValue: 0xFFFFFF)
         }
     }
     
     func navigationBarColor() -> UIColor {
         switch currentMode {
-        case .DarkMode:
+        case .darkMode:
             return UIColor(hexValue: 0x4A4A4A)
-        case .LightMode:
+        case .lightMode:
             return UIColor(hexValue: 0xFFFFFF)
         }
     }
     
     func statusBarColor() -> UIColor {
         switch currentMode {
-        case .DarkMode:
+        case .darkMode:
             return UIColor(hexValue: 0xFFFFFF)
-        case .LightMode:
+        case .lightMode:
             return UIColor(hexValue: 0x000000)
         }
     }
