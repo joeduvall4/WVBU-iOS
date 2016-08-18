@@ -15,7 +15,7 @@ class WVBUColorScheme {
         case darkMode
     }
     
-    static let sharedInstance = WVBUColorScheme()
+    static let shared = WVBUColorScheme()
     
     var currentMode: ColorMode = .lightMode
     

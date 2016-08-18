@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dlG-OU-1dC"/>
+                        <segue destination="gdL-e4-40q" kind="relationship" relationship="rootViewController" id="pTK-cf-5HI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ie0-Hf-rCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,7 +34,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gof-ZW-eS9">
@@ -119,7 +119,87 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="16"/>
+            <point key="canvasLocation" x="1661" y="16"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qlf-cK-gqB">
+            <objects>
+                <viewController id="gdL-e4-40q" customClass="ViewController" customModule="WVBU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pmm-kN-ioA"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZOS-lW-YiV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Jp-sP-Zc5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3FL-1j-7S5">
+                                <frame key="frameInset" minX="141.5" minY="201" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6tZ-Kc-Cxa">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wX7-JT-dfb">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" verticalCompressionResistancePriority="758" layoutMarginsFollowReadableWidth="YES" text="Song" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-Da-LiT">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" verticalCompressionResistancePriority="757" layoutMarginsFollowReadableWidth="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4C-xr-nDN">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2js-wC-8mF">
+                                                <state key="normal" image="Play"/>
+                                                <connections>
+                                                    <action selector="playPressed:" destination="gdL-e4-40q" eventType="touchUpInside" id="vio-A8-VaB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="756" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBO-kd-L1c">
+                                                <state key="normal" image="ListenOnAppleMusic"/>
+                                                <connections>
+                                                    <action selector="iTunesPressed:" destination="gdL-e4-40q" eventType="touchUpInside" id="ARj-uT-84j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="widthClass=regular" axis="horizontal"/>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" image="PlaceholderArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-Po-dUk">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jc3-Po-dUk" secondAttribute="height" multiplier="1:1" id="kBG-SU-oxs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6tZ-Kc-Cxa" firstAttribute="leading" secondItem="4Jp-sP-Zc5" secondAttribute="leading" constant="15" id="3iY-4p-3R2"/>
+                            <constraint firstAttribute="trailing" secondItem="6tZ-Kc-Cxa" secondAttribute="trailing" constant="15" id="DHD-Zs-ZLb"/>
+                            <constraint firstItem="Jc3-Po-dUk" firstAttribute="top" secondItem="Pmm-kN-ioA" secondAttribute="bottom" id="a1T-71-Bad"/>
+                            <constraint firstAttribute="trailing" secondItem="Jc3-Po-dUk" secondAttribute="trailing" id="iYr-sL-jrO"/>
+                            <constraint firstItem="ZOS-lW-YiV" firstAttribute="top" secondItem="6tZ-Kc-Cxa" secondAttribute="bottom" constant="15" id="rze-or-KKb"/>
+                            <constraint firstItem="Jc3-Po-dUk" firstAttribute="leading" secondItem="4Jp-sP-Zc5" secondAttribute="leading" id="v3B-pV-739"/>
+                            <constraint firstItem="6tZ-Kc-Cxa" firstAttribute="top" secondItem="Jc3-Po-dUk" secondAttribute="bottom" constant="15" id="wGI-F9-b4y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RaP-1K-gY3"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="albumArtworkImageView" destination="Jc3-Po-dUk" id="K1w-kq-zNE"/>
+                        <outlet property="artistLabel" destination="M4C-xr-nDN" id="gij-Eb-oQW"/>
+                        <outlet property="artworkActivityIndicator" destination="3FL-1j-7S5" id="iZM-F5-VPL"/>
+                        <outlet property="iTunesButton" destination="LBO-kd-L1c" id="i62-GU-hgv"/>
+                        <outlet property="playPauseButton" destination="2js-wC-8mF" id="hXu-jV-eE9"/>
+                        <outlet property="songLabel" destination="cIT-Da-LiT" id="PN9-YW-8U8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lw-S3-kXE" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="16"/>
         </scene>
     </scenes>
     <resources>

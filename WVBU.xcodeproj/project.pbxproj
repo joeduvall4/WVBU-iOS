@@ -417,28 +417,34 @@
 				TargetAttributes = {
 					D8479DB01CC28C5F00D9C32F = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FR6F7PWH4K;
 						LastSwiftMigration = 0800;
 					};
 					D8479DC41CC28C5F00D9C32F = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FR6F7PWH4K;
 						LastSwiftMigration = 0800;
 						TestTargetID = D8479DB01CC28C5F00D9C32F;
 					};
 					D8479DCF1CC28C5F00D9C32F = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FR6F7PWH4K;
 						LastSwiftMigration = 0800;
 						TestTargetID = D8479DB01CC28C5F00D9C32F;
 					};
 					D8B92D691CC827780033B614 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FR6F7PWH4K;
 						LastSwiftMigration = 0800;
 					};
 					D8B92D751CC827780033B614 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FR6F7PWH4K;
 						LastSwiftMigration = 0800;
 					};
 					D8DC9B971CCD7CC8002B2979 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FR6F7PWH4K;
 					};
 				};
 			};
@@ -727,6 +733,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = WVBU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU;
@@ -742,6 +749,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = WVBU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU;
@@ -755,6 +763,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = WVBUTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUTests;
@@ -768,6 +777,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = WVBUTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUTests;
@@ -780,6 +790,7 @@
 		D8479DE01CC28C5F00D9C32F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = WVBUUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUUITests;
@@ -792,6 +803,7 @@
 		D8479DE11CC28C5F00D9C32F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = WVBUUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBUUITests;
@@ -806,6 +818,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				IBSC_MODULE = WVBU_Watch_App_Extension;
 				INFOPLIST_FILE = "WVBU Watch App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp;
@@ -823,6 +836,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				IBSC_MODULE = WVBU_Watch_App_Extension;
 				INFOPLIST_FILE = "WVBU Watch App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp;
@@ -838,6 +852,7 @@
 		D8B92D8B1CC827780033B614 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = "WVBU Watch App Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp.watchkitextension;
@@ -853,6 +868,7 @@
 		D8B92D8C1CC827780033B614 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = "WVBU Watch App Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.bucknell.jsd013.WVBU.watchkitapp.watchkitextension;
@@ -870,6 +886,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = "WVBU-TV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.bucknell.jsd013.WVBU-TV";
@@ -885,6 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = FR6F7PWH4K;
 				INFOPLIST_FILE = "WVBU-TV/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.bucknell.jsd013.WVBU-TV";

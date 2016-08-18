@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>WVBU Watch App (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>WVBU Watch App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>WVBU-TV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>WVBU.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>D8479DB01CC28C5F00D9C32F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8479DC41CC28C5F00D9C32F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8479DCF1CC28C5F00D9C32F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8B92D691CC827780033B614</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8DC9B971CCD7CC8002B2979</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

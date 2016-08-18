@@ -15,18 +15,17 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
     @IBOutlet weak var albumArtworkImageView: UIImageView!
     @IBOutlet weak var playPauseButton: UIButton! {
         didSet {
-            playPauseButton.tintColor = WVBUColorScheme.sharedInstance.buttonColor()
+            playPauseButton.tintColor = WVBUColorScheme.shared.buttonColor()
         }
     }
     @IBOutlet weak var songLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var iTunesButton: UIButton! {
         didSet {
-            iTunesButton.tintColor = WVBUColorScheme.sharedInstance.buttonColor()
+            iTunesButton.tintColor = WVBUColorScheme.shared.buttonColor()
         }
     }
     @IBOutlet weak var artworkActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var addToLibraryButton: UIButton!
     
     let audioManager = WVBUAudioManager.sharedManager
     
@@ -46,14 +45,15 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
         }
     }
     
-    var trackID: String? {
-        didSet {
-            if trackID == nil {
-                addToLibraryButton.isEnabled = false
-            } else {
-                addToLibraryButton.isEnabled = true
-            }
-        }
+    var trackID: String?
+    
+    func updateUIColorScheme() {
+        playPauseButton.tintColor = WVBUColorScheme.shared.buttonColor()
+        songLabel.textColor = WVBUColorScheme.shared.textColor()
+        artistLabel.textColor = WVBUColorScheme.shared.textColor()
+        artworkActivityIndicator.tintColor = WVBUColorScheme.shared.buttonColor()
+        view.backgroundColor = WVBUColorScheme.shared.backgroundColor()
+        navigationController?.navigationBar.tintColor = WVBUColorScheme.shared.navigationBarColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,6 +74,8 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        WVBUColorScheme.shared.currentMode = WVBUColorScheme.ColorMode.darkMode
+        updateUIColorScheme()
         requestMetadataUpdate()
         let titleImageView = UIImageView(image: UIImage(named: "DarkLogoSkinny"))
         titleImageView.contentMode = .scaleAspectFit
