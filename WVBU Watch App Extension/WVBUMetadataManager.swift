@@ -116,6 +116,7 @@ class WVBUMetadataManager {
                     nowPlayingInfo![MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: UIImage(named: "PlaceholderArtwork")!)
                 }
             }
+            nowPlayingInfo![MPMediaItemPropertyAlbumTitle] = "WVBU"
             MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         #endif
     }
