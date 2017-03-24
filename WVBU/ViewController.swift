@@ -129,11 +129,15 @@ class ViewController: UIViewController, WVBUAudioManagerDelegate, WVBUMetadataMa
 extension ViewController {
     func audioManagerDidStartPlaying() {
         playPauseButton.setImage(UIImage(named: "Pause"), for: UIControlState())
+        playPauseButton.accessibilityLabel = "Pause"
+        playPauseButton.accessibilityIdentifier = "Pause button"
         requestMetadataUpdate()
     }
     
     func audioManagerDidStopPlaying() {
         playPauseButton.setImage(UIImage(named: "Play"), for: UIControlState())
+        playPauseButton.accessibilityLabel = "Play"
+        playPauseButton.accessibilityIdentifier = "Play button"
     }
 }
 

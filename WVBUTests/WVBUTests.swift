@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import WVBU
+//@testable import WVBU
 
 class WVBUTests: XCTestCase {
     

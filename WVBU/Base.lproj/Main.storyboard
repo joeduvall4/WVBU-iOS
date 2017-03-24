@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ffP-au-c4d">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ffP-au-c4d">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -34,44 +37,53 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gof-ZW-eS9">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fgM-8T-lgl">
+                                <rect key="frame" x="16" y="40" width="343" height="607"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" image="PlaceholderArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="P8u-DR-j1N">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="387"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="P8u-DR-j1N" secondAttribute="height" multiplier="1:1" priority="250" id="UVT-8M-qs8"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xwc-q5-xxT">
+                                        <rect key="frame" x="0.0" y="395" width="343" height="212"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" verticalCompressionResistancePriority="758" layoutMarginsFollowReadableWidth="YES" text="Song" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BVa-Et-ujs">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" verticalCompressionResistancePriority="757" layoutMarginsFollowReadableWidth="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLU-Mm-KaW">
+                                                <rect key="frame" x="0.0" y="37.5" width="343" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-eJ-Zwt">
+                                                <rect key="frame" x="0.0" y="62" width="343" height="80"/>
                                                 <state key="normal" image="Play"/>
                                                 <connections>
                                                     <action selector="playPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADf-Bg-iUW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="756" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNX-06-bDd">
+                                                <rect key="frame" x="0.0" y="146" width="343" height="40"/>
                                                 <state key="normal" image="ListenOnAppleMusic"/>
                                                 <connections>
                                                     <action selector="iTunesPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDV-sq-yHg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="756" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9G-jQ-Ge9">
+                                                <rect key="frame" x="0.0" y="190" width="343" height="22"/>
                                                 <state key="normal" image="AddToMusicLibrary"/>
                                                 <connections>
                                                     <action selector="addToLibraryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G16-u7-pn9"/>
@@ -130,35 +142,47 @@
                         <viewControllerLayoutGuide type="bottom" id="ZOS-lW-YiV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Jp-sP-Zc5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3FL-1j-7S5">
-                                <frame key="frameInset" minX="141.5" minY="201" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="201" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6tZ-Kc-Cxa">
+                                <rect key="frame" x="15" y="454" width="345" height="198"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wX7-JT-dfb">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" verticalCompressionResistancePriority="758" layoutMarginsFollowReadableWidth="YES" text="Song" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-Da-LiT">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" label="Song"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" verticalCompressionResistancePriority="757" layoutMarginsFollowReadableWidth="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4C-xr-nDN">
+                                                <rect key="frame" x="0.0" y="38" width="345" height="21"/>
+                                                <accessibility key="accessibilityConfiguration" label="Artist"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2js-wC-8mF">
+                                            <button opaque="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2js-wC-8mF">
+                                                <rect key="frame" x="0.0" y="63" width="345" height="91"/>
+                                                <accessibility key="accessibilityConfiguration" label="Play">
+                                                    <accessibilityTraits key="traits" button="YES" startsMediaSession="YES"/>
+                                                </accessibility>
                                                 <state key="normal" image="Play"/>
                                                 <connections>
                                                     <action selector="playPressed:" destination="gdL-e4-40q" eventType="touchUpInside" id="vio-A8-VaB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="756" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBO-kd-L1c">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="756" ambiguous="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBO-kd-L1c">
+                                                <rect key="frame" x="0.0" y="158" width="345" height="40"/>
+                                                <accessibility key="accessibilityConfiguration" hint="Open song in Apple Music." identifier="Apple Music button" label="Apple Music"/>
                                                 <state key="normal" image="ListenOnAppleMusic"/>
                                                 <connections>
                                                     <action selector="iTunesPressed:" destination="gdL-e4-40q" eventType="touchUpInside" id="ARj-uT-84j"/>
@@ -170,6 +194,11 @@
                                 <variation key="widthClass=regular" axis="horizontal"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="255" verticalHuggingPriority="255" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" image="PlaceholderArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-Po-dUk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <accessibility key="accessibilityConfiguration" label="Album art">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Jc3-Po-dUk" secondAttribute="height" multiplier="1:1" id="kBG-SU-oxs"/>
                                 </constraints>
